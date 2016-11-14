@@ -37,7 +37,8 @@ var config = {
     path: path.join(__dirname, '..', 'public', 'js'),
     publicPath: '/js/',
 
-    filename: production ? '[name]-[chunkhash].js' : '[name].js'
+    // filename: production ? '[name]-[chunkhash].js' : '[name].js'
+    filename: production ? '[name].js' : '[name].js'
   },
 
   resolve: {
