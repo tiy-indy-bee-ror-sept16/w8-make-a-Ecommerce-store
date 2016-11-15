@@ -9,21 +9,15 @@
   require 'csv'
   # require 'erb'
 
-  info = CSV.foreach("Iron Glory Inventory.csv", headers: true, :header_converters => :symbol)
-  puts info
+  info = CSV.foreach("Iron Glory Inventory.csv", headers: true, :header_converters => :symbol) do |row|
 
-  # class inventory (move the initializer to a model...)
-
-  #   attr_accessor: :product, :sku, :price, :available, :year, :description, :category
-  #
-  #   def initialize(product:, sku:, price:, available:, year:, description:, category:)
-  #     @product = product
-  #     @sku = sku.to_i
-  #     @price = price.to_i
-  #     @available = available
-  #     @year = year
-  #     @description = description
-  #     @category = category
-  #   end
-  #
-  # end
+    Info.find_or_create by({product: row[0]}) do |x|
+      x.product = row[0]
+      x.sku.to_i = row[1]
+      x.price.to_i = row[2]
+      x.available = row[3]
+      x.year.to_i = row[4]
+      x.description = row[5]
+      x.category = row[6]
+    end
+  end 
