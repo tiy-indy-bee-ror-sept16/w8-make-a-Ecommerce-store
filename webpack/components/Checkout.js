@@ -1,11 +1,12 @@
 import React from 'react'
 
-class Checkout extends Component {
+class Checkout extends React.Component {
     constructor(props){
         super(props)
     }
     render(){
-        return (<div className="container">
+        return ( <div>
+            <div className="container">
         <h1> My Cart</h1>
       </div>
       <div className="container">
@@ -88,7 +89,7 @@ class Checkout extends Component {
           </div>
         </div>
       </div>
-
+      </div>
         )
     }
 }
