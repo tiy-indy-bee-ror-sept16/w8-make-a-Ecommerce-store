@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    border: 1px dashed gray;
+    // border: 1px dashed gray;
 }
 //Generic styling for the page
 body, img {
@@ -10,4 +10,29 @@ body, img {
 
 //Styling for the Body
 
+    //Styling for the Main Page Display Section
+    .singleItem-disp {
+        background: linear-gradient( #000, #fff);
+        margin-top: 10px;
+    }
+    .singleItem_display {
+        width: 60%;
+        margin: 5px auto 10px auto;
+    }
+    .singleItem_sizes_section, .singleItem_avail_section {
+        margin: 10px auto 10px auto;
+    }
+
+    //Styling for the Main Page Description Section
+    .singleItem-desc {
+        background: linear-gradient(#fff, #FC178F);
+        margin-top: 10px;
+    }
+    .singleItem_desc_sec {
+        margin: 5px auto 20px auto;
+    }
+    .singleItem_desc_btn {
+        padding: 5px;
+        margin: 10px auto 10px auto;
+    }
 //Styling for the footer
