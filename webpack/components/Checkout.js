@@ -5,7 +5,7 @@ class Checkout extends Component {
         super(props)
     }
     render(){
-        return (<div>
+        return (
             <div className="container">
         <h1> My Cart</h1>
       </div>
@@ -89,7 +89,7 @@ class Checkout extends Component {
           </div>
         </div>
       </div>
-      </div>
+
 
         )
     }
