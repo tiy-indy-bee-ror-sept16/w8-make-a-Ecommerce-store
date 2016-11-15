@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  root 'patches#static'
   get '/home' => 'patches#index'
+  resources :carts
   resources :line_items
   resources :users
   resources :patches

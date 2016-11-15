@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Payment extends Component {
+class Payment extends React.Component {
     constructor(props){
         super(props)
     }

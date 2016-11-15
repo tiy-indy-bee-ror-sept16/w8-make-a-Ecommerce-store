@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Thanks extends Component {
+class Thanks extends React.Component {
     constructor(props){
         super(props)
     }

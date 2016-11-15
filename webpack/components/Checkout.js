@@ -5,7 +5,7 @@ class Checkout extends Component {
         super(props)
     }
     render(){
-        return (
+        return (<div>
             <div className="container">
         <h1> My Cart</h1>
       </div>
@@ -82,14 +82,14 @@ class Checkout extends Component {
             <div className="row">
               <div className="col-sm-12 ">
                 <div className="form-group">
-                  <button id="checkout" type="button" className="btn btn-success btn-block">Place an Order!</button>
+                  <button id="checkout" type="button" className="btn btn-success btn-block">Place an Order</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
+      </div>
 
         )
     }
