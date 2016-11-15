@@ -1,11 +1,11 @@
 import React from 'react'
 
-class Checkout extends React.Component {
+class Checkout extends Component {
     constructor(props){
         super(props)
     }
     render(){
-        return ( <div>
+        return (<div>
             <div className="container">
         <h1> My Cart</h1>
       </div>
@@ -27,7 +27,7 @@ class Checkout extends React.Component {
             <div className="row">
               <div className="col-sm-1">
                 <label>
-                  <input type="hidden" name="delette" value="no" />
+                  <input type="hidden" name="delete" value="no" />
                   <input type="checkbox" name="delete" value="yes" />
                 </label>
               </div>
@@ -40,7 +40,7 @@ class Checkout extends React.Component {
               <div className="col-sm-6 flexPQS">
                 <h6>  $159.00  </h6>
                 <h6>  1 </h6>
-                <h6>  159.00 </h6>
+                <h6>  $159.00 </h6>
               </div>
             </div>
           </div>
@@ -52,7 +52,7 @@ class Checkout extends React.Component {
                 <h6>Subtotal</h6>
               </div>
               <div className="col-sm-6 text-right">
-                <h6>S74.00</h6>
+                <h6>$74.00</h6>
               </div>
             </div>
             <div className="row">
@@ -68,7 +68,7 @@ class Checkout extends React.Component {
                 <h6>Shipping</h6>
               </div>
               <div className="col-sm-6 text-right">
-                <h6>S10.00</h6>
+                <h6>$10.00</h6>
               </div>
             </div>
             <div className="row">
@@ -82,7 +82,7 @@ class Checkout extends React.Component {
             <div className="row">
               <div className="col-sm-12 ">
                 <div className="form-group">
-                  <button id="checkout" type="button" className="btn btn-success btn-block">Check Out!</button>
+                  <button id="checkout" type="button" className="btn btn-success btn-block">Place an Order</button>
                 </div>
               </div>
             </div>
@@ -90,6 +90,7 @@ class Checkout extends React.Component {
         </div>
       </div>
       </div>
+
         )
     }
 }
