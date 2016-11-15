@@ -9,3 +9,7 @@ img {
 nav {
   background: black;
 }
+
+.col-sm-12 h1 {
+  font-size: 200px;
+}
