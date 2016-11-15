@@ -4,5 +4,8 @@ class PatchesController < ApplicationController
       @patches = Patch.all
     end
 
+    def static
+    end
+
 
 end
