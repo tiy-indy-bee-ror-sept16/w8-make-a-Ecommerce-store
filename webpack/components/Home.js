@@ -1,13 +1,13 @@
 import React from 'react'
 
-class Home extends Component {
+class Home extends React.Component {
     constructor(props) {
         super(props)
     }
     render () {
         return (
             <div>
-            <nav className="navbar  navbar-fixed-top navbar-default">
+            {/* <nav className="navbar  navbar-fixed-top navbar-default">
           <div className="container">
             <a className="navbar-brand" href="#">Logo</a>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -26,7 +26,7 @@ class Home extends Component {
               </form>
             </div>
           </div>
-        </nav>
+        </nav> */}
         <div className="container middle-container">
               <div className="row">
                 <div className="col-sm-2">
@@ -49,12 +49,12 @@ class Home extends Component {
                     Sort Patches By:
                   </p>
                   <div className="middle-left-two">
-                    <input type="checkbox"><a href="#">Small</a></input><br />
-                              <input type="checkbox"><a href="#">Medium</a></input><br />
-                            <input type="checkbox"><a href="#">Large</a></input><br />
-                              <input type="checkbox"><a href="#">Brand</a></input><br />
-                           <input type="checkbox"><a href="#">Price Low-High</a></input><br />
-                      <input type="checkbox"><a href="#">Price High-Low</a></input><br />
+                    <button type="radio"><a href="#">Small</a></button><br />
+                              <button type="radio"><a href="#">Medium</a></button><br />
+                            <button type="radio"><a href="#">Large</a></button><br />
+                              <button type="radio"><a href="#">Brand</a></button><br />
+                           <button type="radio"><a href="#">Price Low-High</a></button><br />
+                      <button type="radio"><a href="#">Price High-Low</a></button><br />
                     <hr />
                   </div>
                 </div>
