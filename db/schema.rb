@@ -15,6 +15,18 @@ ActiveRecord::Schema.define(version: 20161114231952) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "adonis_schema", force: :cascade do |t|
+    t.string   "name",           limit: 255
+    t.integer  "batch"
+    t.datetime "migration_time"
+  end
+
+  create_table "chats", force: :cascade do |t|
+    t.string   "message",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "patches", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
