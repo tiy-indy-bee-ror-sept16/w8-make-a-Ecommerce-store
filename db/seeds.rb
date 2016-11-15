@@ -6,24 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-  require 'csv'
-  # require 'erb'
+require 'csv'
 
-  info = CSV.foreach("Iron Glory Inventory.csv", headers: true, :header_converters => :symbol)
-  puts info
 
-  # class inventory (move the initializer to a model...)
+info = CSV.foreach(Rails.root + "db/IronGloryInventory.csv", headers: true, :header_converters => :symbol)
 
-  #   attr_accessor: :product, :sku, :price, :available, :year, :description, :category
-  #
-  #   def initialize(product:, sku:, price:, available:, year:, description:, category:)
-  #     @product = product
-  #     @sku = sku.to_i
-  #     @price = price.to_i
-  #     @available = available
-  #     @year = year
-  #     @description = description
-  #     @category = category
-  #   end
-  #
-  # end
+
+info.each do |row|
+ Patch.create!(row.to_h)
+end
