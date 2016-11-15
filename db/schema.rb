@@ -10,26 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114231952) do
+ActiveRecord::Schema.define(version: 20161115190611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "adonis_schema", force: :cascade do |t|
-    t.string   "name",           limit: 255
-    t.integer  "batch"
-    t.datetime "migration_time"
-  end
-
-  create_table "chats", force: :cascade do |t|
-    t.string   "message",    limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "quantity"
+    t.string   "size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "patches", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "product"
+    t.string   "sku"
+    t.integer  "price"
+    t.string   "available"
+    t.integer  "year"
+    t.text     "description"
+    t.string   "category"
   end
 
   create_table "users", force: :cascade do |t|
