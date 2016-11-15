@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "React App",
   "main": "/js/global.js",
+  "repository": "https://github.com/mannyy91s/w8-make-a-Ecommerce-store.git",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack"
@@ -30,7 +31,8 @@
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "webpack-dev-middleware": "1.7.0"
   },
   "dependencies": {
     "moment": "^2.15.2",
