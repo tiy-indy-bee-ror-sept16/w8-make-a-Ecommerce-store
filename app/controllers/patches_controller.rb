@@ -34,5 +34,5 @@ class PatchesController < ApplicationController
     params.require(:patch)
   end
 
-  
+end
 end
