@@ -1,6 +1,6 @@
 import React from 'react'
 
-class SingleItem extends Component {
+class SingleItem extends React.Component {
     constructor(props){
         super(props)
     }

@@ -1,0 +1,2 @@
+class ThankyouMailer < ApplicationMailer
+end
