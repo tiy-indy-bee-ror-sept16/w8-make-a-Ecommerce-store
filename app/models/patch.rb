@@ -1,4 +1,6 @@
 class Patch < ApplicationRecord
-  attributes 
+  belongs_to :line_item
+  belongs_to :inventory
+  belongs_to :cart
 
 end
