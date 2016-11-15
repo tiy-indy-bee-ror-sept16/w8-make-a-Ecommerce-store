@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 class Home extends React.Component {
     constructor(props) {
@@ -7,26 +8,24 @@ class Home extends React.Component {
     render () {
         return (
             <div>
-            {/* <nav className="navbar  navbar-fixed-top navbar-default">
-          <div className="container">
-            <a className="navbar-brand" href="#">Logo</a>
-            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul className="nav navbar-nav">
-                <li className="active"><a href="#"><i className="glyphicon glyphicon-home"></i> Home <span className="sr-only">(current)</span></a></li>
-                <li><a href="#">Another Page</a></li>
-              </ul>
-              <ul className="nav navbar-nav navbar-right">
-                <li><a href="#"><i className="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-              </ul>
-              <form className="navbar-form text-center">
-                <div className="form-group">
-                  <input type="text" className="form-control" placeholder="Search for patches" />
+            <nav>
+                <div className="container">
+                  <div className="row">
+                    <div className="col-sm-3">
+                      <Link to="/"><button>Home</button></Link>
+                    </div>
+                    <div className="col-sm-3">
+                     <Link to="/singleitem"> <button>SingleItem</button></Link>
+                    </div>
+                    <div className="col-sm-3">
+                    <Link to="/thanks">  <button>Thanks</button></Link>
+                    </div>
+                    <div className="col-sm-3">
+                     <Link to="/checkout"> <button>checkout</button></Link>
+                    </div>
+                  </div>
                 </div>
-                <button type="submit" className="btn btn-default">Submit</button>
-              </form>
-            </div>
-          </div>
-        </nav> */}
+            </nav>
         <div className="container middle-container">
               <div className="row">
                 <div className="col-sm-2">
