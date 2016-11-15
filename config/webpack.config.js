@@ -8,34 +8,34 @@ var StatsPlugin = require('stats-webpack-plugin');
 // must match config.webpack.dev_server.port
 var devServerPort = 3808;
 
-// set NODE_ENV=production on the environment to add asset fingerprints
-var production = process.env.NODE_ENV === 'production';
+// set TARGET=production on the environment to add asset fingerprints
+var production = process.env.TARGET === 'production';
 
 var config = {
   entry: {
     // Sources are expected to live in $app_root/webpack
-    'global': './webpack/global.js'
+    'application': './webpack/application.js'
   },
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['latest', 'react']
-        }
-      }
-    ]
-  },
-
+     loaders: [
+       {
+         test: /\.js$/,
+         exclude: /node_modules/,
+         loader: 'babel',
+         query: {
+           presets: ['latest', 'react']
+         }
+       }
+     ]
+   },
+   
   output: {
     // Build assets directly in to public/webpack/, let webpack know
     // that all webpacked assets start with webpack/
 
     // must match config.webpack.output_dir
-    path: path.join(__dirname, '..', 'public', 'js'),
-    publicPath: '/js/',
+    path: path.join(__dirname, '..', 'public', 'webpack'),
+    publicPath: '/webpack/',
 
     filename: production ? '[name]-[chunkhash].js' : '[name].js'
   },
@@ -74,7 +74,7 @@ if (production) {
     port: devServerPort,
     headers: { 'Access-Control-Allow-Origin': '*' }
   };
-  config.output.publicPath = '//localhost:' + devServerPort + '/js/';
+  config.output.publicPath = '//localhost:' + devServerPort + '/webpack/';
   // Source maps
   config.devtool = 'cheap-module-eval-source-map';
 }
