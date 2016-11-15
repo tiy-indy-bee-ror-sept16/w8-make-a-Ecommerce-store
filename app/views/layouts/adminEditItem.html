@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Edit</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Stylesheets go here. -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="global.css" />
+
+</head>
+<body>
+  <!-- Content goes here. -->
+<div class="panel panel-default">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="image description">Patch</label>
+              <img src="http://unsplash.it/200?image=1" alt="random image to hold place" class="thumbnail">
+              <button id="signin" type="button" class="btn btn-default">Upload</button>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" id="title" name="title" class="form-control"  />
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="sku">SKU</label>
+              <input type="text" id="sku" name="sku" class="form-control"  />
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="year">Year</label>
+              <input type="text" id="year" name="year" class="form-control"  />
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input type="text" id="price" name="price" class="form-control"  />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <label for="description">Description</label>
+            <textarea class="form-control" rows="4"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="brand">Brand</label>
+              <input type="text" id="brand" name="brand" class="form-control"  />
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="inventory">On Hand</label>
+              <input type="text" id="inventory" name="inventory" class="form-control"  />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <button id="signIn" type="button" class="btn btn-default text-center">Update</button>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <button id="delete" type="button" class="btn btn-default text-center">Delete</button>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <button id="newItem" type="button" class="btn btn-default text-center">New Item</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Scripts go here. -->
+  <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
+  <script type="text/javascript" src="js/global.js"></script>
+</body>
+</html>
