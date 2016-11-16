@@ -12,12 +12,12 @@ body, img {
   box-shadow: 2px 2px 2px solid gray;
 }
 
-.singleItem_navbar li {
-  text-shadow: 2px 2px 5px gray;
+.singleItem-disp {
+  background-color: gray;
 }
 
-.singleItem-disp {
-  padding-top: 10px;
+.singleItem-disp img {
+  box-shadow: 5px 5px 5px black;
 }
 
 .singleItem_display {
@@ -30,7 +30,7 @@ body, img {
 }
 
 .singleItem-desc {
-  padding-top: 10px;
+  background: URL("../images/iron-glory-assets/iron-glory-background.jpg");
 }
 
 .singleItem_desc_sec {
