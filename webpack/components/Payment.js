@@ -802,10 +802,8 @@ class Payment extends React.Component {
                                         <div className="form-group">
                                             <label forHTML="card_type">Credit Card Type</label>
                                             <select className="form-control" name="card_type" id="card_type">
-                                                <option value="AX">Amex</option>
-                                                <option value="GW">Google Wallet</option>
-                                                <option value="DS">Discover</option>
-                                                <option value="PP" selected>PayPal</option>
+                                                <option value="VS">Visa</option>
+                                                <option value="MC">MasterCard</option>
                                             </select>
                                         </div>
                                     </div>
