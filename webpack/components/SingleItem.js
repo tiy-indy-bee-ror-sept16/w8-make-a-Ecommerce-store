@@ -18,6 +18,7 @@ class SingleItem extends React.Component {
             <div className="row singleItem_desc_sec" key={i}>
                 <div className="col-sm-12">
                     <h3 tabIndex="0">Patch Name: <em>{patch.product}</em></h3>
+                    <h3 tabIndex="0">Patch Sku: <em>{patch.product}</em></h3>
                     <h3 tabIndex="0">Patch Price: <em>&#36; {patch.price}</em></h3>
                     <h4 tabIndex="0">Patch Description</h4>
                     <p>{patch.description}</p>
@@ -26,6 +27,12 @@ class SingleItem extends React.Component {
         ))
         return (
             <div className="container-fluid">
+                <div class="row">
+                    <ul class="singleItemNavBar">
+                      <li>Home</li>
+                      <li class="cart">Cart</li>
+                    </ul>
+                </div>
                 <div className="row">
                     <main>
                         <section className="singleItem-disp">
