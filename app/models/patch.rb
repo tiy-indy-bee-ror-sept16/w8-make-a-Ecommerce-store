@@ -1,3 +1,6 @@
 class Patch < ApplicationRecord
-  has_many :line_item
+  
+  has_many :line_items
+  belongs_to :category
+
 end
