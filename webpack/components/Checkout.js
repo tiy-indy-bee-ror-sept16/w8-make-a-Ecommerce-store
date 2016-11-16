@@ -9,11 +9,11 @@ class Checkout extends React.Component {
       <div className="thumbnail">
         <img src="images/iron-glory-assets/iron-glory-logo.png" />
       </div>
-      
+
       <div className="container">
         <h2> My Cart</h2>
       </div>
-      <div className="container">
+      <div className="container checkOut">
         <div className="row">
           <div className="col-sm-7 ">
             <div className="row well well-sm">
@@ -46,16 +46,28 @@ class Checkout extends React.Component {
 
                     </div>
                     <div className="col-sm-4 ">
-                      <div className="form-group">
-
-                        <input type="text" id="itemQuantity" name="itemQuantity" className="form-control"  />
-                      </div>
+                      <select className="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                      </select>
                     </div>
                     <div className="col-sm-4 text-danger">
-                      <h5>Remove</h5>
+                      <div className="form-group">
+                        <button id="delete" type="button" className="btn btn-default btn-block">Delete</button>
+                      </div>
                     </div>
                     <div className="col-sm-4">
-                      <h5>Update Cart</h5>
+                      <div className="form-group">
+                        <button id="updateCart" type="button" className="btn btn-default btn-block">Update Cart</button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -68,7 +80,7 @@ class Checkout extends React.Component {
           <div className="col-sm-4 ">
             <div className="row">
               <div className="col-sm-12 well well-sm">
-                <h2>Order Total</h2>
+                <h3>Order Total</h3>
               </div>
             </div>
             <div className="row">
@@ -106,13 +118,14 @@ class Checkout extends React.Component {
             <div className="row">
               <div className="col-sm-12">
                 <div className="form-group">
-                  <button id="placeorder" type="button" className="btn btn-success btn-block">Place An Order</button>
+                  <button id="placeorder" type="button" className="btn btn-default buttonOrder btn-block">Place An Order</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
 
   )
