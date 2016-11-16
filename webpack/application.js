@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
             <Route path="/" component={Home} />
             <Route path="/thanks" component={Thanks} />
             <Route path="/checkout" component={Checkout} />
-            <Route path="/singleitem" component={SingleItem} />
+            <Route path="/singleitem/:id" component={SingleItem} />
         </Router>
         ,document.getElementById('app')
     )
