@@ -225,14 +225,11 @@ DEPENDENCIES
   pg_search
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
-
   ransack
-
   refile!
   refile-mini_magick
   refile-postgres (~> 1.4)
   rollbar
-
   sass-rails (~> 5.0)
   sinatra!
   spring
