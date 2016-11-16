@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(version: 20161116195001) do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+||||||| merged common ancestors
+<<<<<<< HEAD
+  create_table "chats", force: :cascade do |t|
+    t.string   "message",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+||||||| merged common ancestors
+=======
+>>>>>>> 66d15836bf6ee99f737114bf0797b5d188a96d54
 =======
 
 
@@ -36,6 +49,17 @@ ActiveRecord::Schema.define(version: 20161116195001) do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  create_table "chats", force: :cascade do |t|
+    t.string   "message",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+||||||| merged common ancestors
+>>>>>>> 4573da2030afbeb55d2f1a168b272480f015d63d
+>>>>>>> 66d15836bf6ee99f737114bf0797b5d188a96d54
 =======
 
 >>>>>>> 642e744adaf3fb9061d5691007916e065cf20e7a
