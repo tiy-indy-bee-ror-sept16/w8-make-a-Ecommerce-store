@@ -1,4 +1,7 @@
 class PatchesController < ApplicationController
+
+  before_action :convert_to_cents
+
   attr_accessor: :product, :sku, :price, :available, :year, :description, :category
 
   def initialize(product:, sku:, price:, available:, year:, description:, category:)
@@ -34,5 +37,4 @@ class PatchesController < ApplicationController
     params.require(:patch)
   end
 
-  
 end
