@@ -20,7 +20,7 @@ class Home extends React.Component {
                     <div className="col-sm-3 patchDivs" >
                       <div className="col-sm-12"><img src="http://unsplash.it/300/200?random" /></div>
                       <div className="col-sm-12"><b>{patch.product}</b></div>
-                      <div className="col-sm-12">{patch.description}</div>
+                      <div className="col-sm-12 patches-description">{patch.description}</div>
                       <div className="col-sm-6 col-sm-offset-8"><b>{patch.price}</b></div>
                     </div>
                 </Link>
