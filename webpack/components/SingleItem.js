@@ -31,7 +31,7 @@ class SingleItem extends React.Component {
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <label htmlFor="image description">Patch</label>
-                                        <img src="/images/iron-glory-assets/iron-glory-products/igp1.png" alt="random image to hold place" className="thumbnail singleItem_display"/>
+                                        <img src={this.state.item.image} alt="random image to hold place" className="thumbnail singleItem_display"/>
                                     </div>
                                 </div>
                                 <div className="row singleItem_avail_section">
