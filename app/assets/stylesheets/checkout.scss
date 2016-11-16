@@ -15,7 +15,18 @@ img{
     background: #FF008F;
     color: white;
     margin-top: 200px;
+
 }
 .checkOut {
   padding-bottom: 100px;
+}
+
+a:link {
+    color: white;
+  }
+  a:visited {
+    color: white;
+}
+a:hover {
+    color: black;
 }
