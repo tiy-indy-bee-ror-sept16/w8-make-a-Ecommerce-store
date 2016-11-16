@@ -9,6 +9,14 @@ body, img {
 //Styling for the Header
 
 //Styling for the Body
+.singleItem_navbar {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    box-shadow: 2px 2px 2px solid gray;
+    li {
+        text-shadow: 2px 2px 5px gray;
+    }
+}
 
     //Styling for the Main Page Display Section
     .singleItem-disp {
