@@ -38,4 +38,3 @@ class PatchesController < ApplicationController
   end
 
 end
-end
