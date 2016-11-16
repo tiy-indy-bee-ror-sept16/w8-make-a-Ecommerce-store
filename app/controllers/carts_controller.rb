@@ -2,9 +2,9 @@ class CartsController < ApplicationController
 
 
   def index
-    if current_user
-      @cart = current_user.cart
-    else
+    # if current_user
+    #   @cart = current_user.cart
+    # else
       @cart = Cart.new
       @cart.save!
       render json: @cart
@@ -14,8 +14,8 @@ class CartsController < ApplicationController
 
   def create
     @cart = Cart.new()
-    if current_user
-      @cart.user = current_user
+    # if current_user
+    #   @cart.user = current_user
     end
     @cart.save
     render json: @cart
