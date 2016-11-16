@@ -15,54 +15,17 @@ ActiveRecord::Schema.define(version: 20161116195001) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 642e744adaf3fb9061d5691007916e065cf20e7a
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-||||||| merged common ancestors
-<<<<<<< HEAD
-  create_table "chats", force: :cascade do |t|
-    t.string   "message",    limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-||||||| merged common ancestors
-=======
->>>>>>> 66d15836bf6ee99f737114bf0797b5d188a96d54
-=======
-
-
->>>>>>> 642e744adaf3fb9061d5691007916e065cf20e7a
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "name"
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  create_table "chats", force: :cascade do |t|
-    t.string   "message",    limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-||||||| merged common ancestors
->>>>>>> 4573da2030afbeb55d2f1a168b272480f015d63d
->>>>>>> 66d15836bf6ee99f737114bf0797b5d188a96d54
-=======
-
->>>>>>> 642e744adaf3fb9061d5691007916e065cf20e7a
   create_table "line_items", force: :cascade do |t|
     t.integer  "quantity"
     t.string   "size"
