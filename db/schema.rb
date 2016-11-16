@@ -20,12 +20,21 @@ ActiveRecord::Schema.define(version: 20161116213126) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 4817742e10b075f098b76796c2dacda6b1ddc889
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "name"
   end
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 4817742e10b075f098b76796c2dacda6b1ddc889
   create_table "line_items", force: :cascade do |t|
     t.integer  "quantity"
     t.string   "size"

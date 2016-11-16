@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+.footer-container {
+  background: #FF008F;
+  color: white;
+  margin-top: 200px;
+}
+
+.footer-container a:link {
+  color: white;
+}
+
+.footer-container a:visited {
+  color: white;
+}
+
+.footer-container a:hover {
+  color: black;
+}
+
+.checkOut {
+  padding-bottom: 100px;
+}
