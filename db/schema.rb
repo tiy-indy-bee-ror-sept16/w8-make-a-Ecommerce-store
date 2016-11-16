@@ -17,6 +17,9 @@ ActiveRecord::Schema.define(version: 20161116195001) do
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> b0a1fd866e435df366c887c252b8b9e8414b1cd8
 
 >>>>>>> 642e744adaf3fb9061d5691007916e065cf20e7a
   create_table "carts", force: :cascade do |t|
@@ -24,6 +27,8 @@ ActiveRecord::Schema.define(version: 20161116195001) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -42,12 +47,15 @@ ActiveRecord::Schema.define(version: 20161116195001) do
 
 
 >>>>>>> 642e744adaf3fb9061d5691007916e065cf20e7a
+>>>>>>> b0a1fd866e435df366c887c252b8b9e8414b1cd8
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "name"
   end
 
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -63,6 +71,7 @@ ActiveRecord::Schema.define(version: 20161116195001) do
 =======
 
 >>>>>>> 642e744adaf3fb9061d5691007916e065cf20e7a
+>>>>>>> b0a1fd866e435df366c887c252b8b9e8414b1cd8
   create_table "line_items", force: :cascade do |t|
     t.integer  "quantity"
     t.string   "size"

@@ -23,8 +23,7 @@ info.each do |row|
  size: row[:available].gsub(/:\d+/,""),
  year: row[:year],
  description: row[:description],
- category: Category.find_or_create_by(name: row[:category])
- image: File.open(Rails.root + "assets/img/iron-glory-assets/iron-glory-products/" + row[:sku] + ".png", "rb")
+ category: Category.find_or_create_by(name: row[:category]),
+ image: File.open(Rails.root + "app/assets/images/iron-glory-assets/iron-glory-products/#{row[:sku].downcase}.png", "rb")
  )
-
 end
