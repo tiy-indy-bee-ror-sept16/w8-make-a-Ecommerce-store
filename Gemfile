@@ -17,7 +17,16 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'jquery-rails'
+gem 'sinatra', github: 'sinatra/sinatra'
+gem "refile", require: "refile/rails", github: 'refile/refile'
+gem "refile-mini_magick"
+gem 'refile-postgres', '~> 1.4'
+gem 'stripe'
+gem 'foreman'
+gem 'rollbar'
+gem 'oj', '~> 2.12.14'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
