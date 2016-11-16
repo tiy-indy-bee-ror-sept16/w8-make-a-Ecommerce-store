@@ -7,7 +7,7 @@ class Checkout extends React.Component {
   render(){
     return (<div>
       <div className="thumbnail">
-        <img src="images/iron-glory-assets/iron-glory-logo.png" />
+        <img src="/images/iron-glory-assets/iron-glory-logo.png" />
       </div>
 
       <div className="container">
@@ -27,7 +27,7 @@ class Checkout extends React.Component {
             <div className="row">
               <div>
                 <div className="col-sm-4 thumbnail">
-                  <img src="images/iron-glory-assets/iron-glory-products/igp8.png" />
+                  <img src="/images/iron-glory-assets/iron-glory-products/igp8.png" />
                 </div>
                 <div className="col-sm-8 ">
                   <div className="row">
@@ -80,7 +80,7 @@ class Checkout extends React.Component {
           <div className="col-sm-4 ">
             <div className="row">
               <div className="col-sm-12 well well-sm">
-                <h3>Order Total</h3>
+                <h3>ORDER TOTAL</h3>
               </div>
             </div>
             <div className="row">
