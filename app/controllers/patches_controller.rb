@@ -13,6 +13,7 @@ class PatchesController < ApplicationController
 
   def show
     @patch = Patch.find(params[:id])
+    render json: @patch
   end
 
   def new
