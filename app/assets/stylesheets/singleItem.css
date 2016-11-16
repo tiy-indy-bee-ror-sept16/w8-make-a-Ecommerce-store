@@ -6,6 +6,16 @@ body, img {
   width: 100%;
 }
 
+.singleItem_navbar {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  box-shadow: 2px 2px 2px solid gray;
+}
+
+.singleItem_navbar li {
+  text-shadow: 2px 2px 5px gray;
+}
+
 .singleItem-disp {
   padding-top: 10px;
 }

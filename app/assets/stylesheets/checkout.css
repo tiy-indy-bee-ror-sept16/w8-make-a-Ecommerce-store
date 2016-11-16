@@ -5,3 +5,20 @@
 img {
   width: 100%;
 }
+
+#placeorder {
+  background-color: #FF008F;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.footer-container {
+  background: #FF008F;
+  color: white;
+  margin-top: 200px;
+}
+
+.checkOut {
+  padding-bottom: 100px;
+}
