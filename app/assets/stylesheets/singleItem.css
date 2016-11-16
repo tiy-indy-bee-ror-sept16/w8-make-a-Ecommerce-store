@@ -51,6 +51,10 @@ body, img {
   background: URL("../images/iron-glory-assets/iron-glory-background.jpg");
 }
 
+.singleItem-desc img {
+  box-shadow: 5px 5px 5px black;
+}
+
 .singleItem_desc_sec {
   margin: 5px auto 20px auto;
 }
