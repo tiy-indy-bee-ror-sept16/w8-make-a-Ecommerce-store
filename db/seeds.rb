@@ -8,15 +8,18 @@
 
 require 'csv'
 
-info = Array.new
-puts info.inspect
+
 info = CSV.foreach(Rails.root + "db/IronGloryInventory.csv", headers: true, :header_converters => :symbol)
 
-puts info.inspect
-# csv = CSV.parse(info, :headers => true, :encoding => 'ISO-8859-1')
-# puts csv.inspect
+
 info.each do |row|
-puts info.inspect
- Patch.create!(row.to_h)
-puts info.inspect
+
+ Patch.create!(product: row[:product],
+ sku: row[:sku],
+ price: row[:price],
+ available: row[:available],
+ year: row[:year],
+ description: row[:description],
+ category: Category.find_or_create_by(name: row[:category]))
+
 end
