@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'webpack-rails'
 gem 'foreman'
+gem 'pg_search'
+gem 'ransack'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
