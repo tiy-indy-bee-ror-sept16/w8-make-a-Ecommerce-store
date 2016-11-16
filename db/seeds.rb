@@ -13,5 +13,11 @@ info = CSV.foreach(Rails.root + "db/IronGloryInventory.csv", headers: true, :hea
 
 
 info.each do |row|
- Patch.create!(row.to_h)
+ Patch.create!(product: row[:product],
+ sku: row[:sku],
+ price: row[:price],
+ available: row[:available],
+ year: row[:year],
+ description: row[:description],
+ category: Category.find_or_create_by(name: row[:category]))
 end
