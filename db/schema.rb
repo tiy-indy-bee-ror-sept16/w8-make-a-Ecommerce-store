@@ -26,18 +26,31 @@ ActiveRecord::Schema.define(version: 20161116213126) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 4817742e10b075f098b76796c2dacda6b1ddc889
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "name"
   end
 
+<<<<<<< HEAD
   create_table "chats", force: :cascade do |t|
     t.string   "message",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+||||||| merged common ancestors
+=======
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 4817742e10b075f098b76796c2dacda6b1ddc889
+>>>>>>> 76b026f469ade8c950080154e0af8ec8e6cc3758
   create_table "line_items", force: :cascade do |t|
     t.integer  "quantity"
     t.string   "size"

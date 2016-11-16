@@ -3,34 +3,25 @@ import React from 'react'
 class SingleItem extends React.Component {
     constructor(props){
         super(props)
+
         this.state = {
-            items: []
+            id: window.location.href.split('/')[4],
+            item: {}
         };
     }
     componentDidMount(){
-        fetch('/patches')
+        fetch('/patches/' + this.state.id)
         .then(response => response.json())
-        .then(response => this.setState({items: response}
-        /*console.log(response)*/))
+        // .then(response => console.log(response))
+        .then(response => this.setState({item: response}))
     }
     render(){
-        var singlePatch = this.state.items.map((patch, i)=>(
-            <div className="row singleItem_desc_sec" key={i}>
-                <div className="col-sm-12">
-                    <h3 tabIndex="0">Patch Name: <em>{patch.product}</em></h3>
-                    <h3 tabIndex="0">Patch Sku: <em>{patch.product}</em></h3>
-                    <h3 tabIndex="0">Patch Price: <em>&#36; {patch.price}</em></h3>
-                    <h4 tabIndex="0">Patch Description</h4>
-                    <p>{patch.description}</p>
-                </div>
-            </div>
-        ))
         return (
             <div className="container-fluid">
-                <div class="row">
-                    <ul class="singleItemNavBar">
+                <div className="row">
+                    <ul className="singleItemNavBar">
                       <li>Home</li>
-                      <li class="cart">Cart</li>
+                      <li className="cart">Cart</li>
                     </ul>
                 </div>
                 <div className="row">
@@ -40,7 +31,7 @@ class SingleItem extends React.Component {
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <label htmlFor="image description">Patch</label>
-                                        <img src="/images/iron-glory-assets/iron-glory-products/igp1.png" alt="random image to hold place" className="thumbnail singleItem_display"/>
+                                        <img src={this.state.item.image} alt="random image to hold place" className="thumbnail singleItem_display"/>
                                     </div>
                                 </div>
                                 <div className="row singleItem_avail_section">
@@ -64,7 +55,15 @@ class SingleItem extends React.Component {
                                         <img src="/images/iron-glory-assets/iron-glory-logo.png" alt="image of iron glory"/>
                                     </div>
                                 </div>
-                                {singlePatch}
+                                <div className="row singleItem_desc_sec">
+                                    <div className="col-sm-12">
+                                        <h3 tabIndex="0">Patch Name: <em>{this.state.item.product}</em></h3>
+                                        <h3 tabIndex="0">Patch Sku: <em>{this.state.item.sku}</em></h3>
+                                        <h3 tabIndex="0">Patch Price: <em>&#36; {this.state.item.price}</em></h3>
+                                        <h4 tabIndex="0">Patch Description</h4>
+                                        <p>{this.state.item.description}</p>
+                                    </div>
+                                </div>
                                 {/* <div className="row singleItem_desc_sec">
                                     <div className="col-sm-12">
                                         <h3 tabIndex="0">Patch Name: <em>Fender</em></h3>
