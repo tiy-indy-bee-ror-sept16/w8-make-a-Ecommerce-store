@@ -6,7 +6,7 @@ class Thanks extends React.Component {
     }
     render(){
         return (
-            <div className="container">
+            <div className="container thankyou-container">
             <div className="row">
               <div className="col-sm-12">
                 <h1>Dear Customer,</h1>

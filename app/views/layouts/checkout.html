@@ -6,89 +6,127 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Stylesheets go here. -->
+  <script src="http://use.fontawesome.com/1b7e1608c5.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/checkout.css" />
+  <link rel="stylesheet" type="text/css" href="global.css" />
 
 </head>
 <body>
-
-<div class="container">
-    <h1> My Cart</h1>
+  <!-- Content goes here. -->
+  <div class="thumbnail">
+    <img src="iron-glory-logo.png" />
   </div>
+
   <div class="container">
+    <h2> My Cart</h2>
+  </div>
+
+  <div class="container checkOut">
     <div class="row">
-      <div class="col-sm-8">
-        <div class="row">
-          <div class="col-sm-6">
-            <h5>PRODUCT</h5>
+      <div class="col-sm-7 ">
+        <div class="row well well-sm">
+          <div class="col-sm-6 ">
+            <h3>PRODUCTS</h3>
           </div>
-          <div class="col-sm-6 flexPQS">
-
-            <h5>  PRICE  </h5>
-            <h5>  QTY </h5>
-            <h5>  SUBTOTAL </h5>
-
+          <div class="col-sm-6 ">
+              <a href="url"><h3>Continue Shopping</h3></a>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-1">
-            <label>
-              <input type="hidden" name="delette" value="no" />
-              <input type="checkbox" name="delete" value="yes">
-            </label>
-          </div>
-          <div class="col-sm-2">
-            <h6>tn</h6>
-          </div>
-          <div class="col-sm-3">
-            <h5>Have a Nice Day Badge</h5>
-          </div>
-          <div class="col-sm-6 flexPQS">
-            <h6>  $159.00  </h6>
-            <h6>  1 </h6>
-            <h6>  159.00 </h6>
+          <div>
+            <div class="col-sm-4 thumbnail">
+              <img src="igp3.png" />
+            </div>
+            <div class="col-sm-8 ">
+              <div class="row">
+                <div class="col-sm-12">
+                  <h3>Have a Nice Day Badge</h3>
+                </div>
+                <div class="col-sm-12 text-muted">
+                  <p>Brighten your world with this happy little patch from the sixties.</p>
+                </div>
+
+                <div class="col-sm-12">
+                  <h3>$159</h3>
+                </div>
+                <div class="col-sm-12">
+                  <h5>Quantity</h5>
+
+                </div>
+                <div class="col-sm-4 ">
+                  <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                  </div>
+                <div class="col-sm-4 text-danger">
+                  <div class="form-group">
+                    <button id="delete" type="button" class="btn btn-default  btn-block">Delete</button>
+                  </div>
+                  </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <button id="updateCart" type="button" class="btn btn-default btn-block">Update Cart</button>
+                  </div>
+                  </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+     <div class="col-sm-1">
 
-      <div class="col-sm-4">
-        <h4>Order Total</h4>
+     </div>
+      <div class="col-sm-4 ">
+        <div class="row">
+        <div class="col-sm-12 well well-sm">
+        <h3>Order Total</h3>
+            </div>
+            </div>
         <div class="row">
           <div class="col-sm-6 text-left">
-            <h6>Subtotal</h6>
+            <h4>Subtotal</h4>
           </div>
           <div class="col-sm-6 text-right">
-            <h6>S74.00</h6>
+            <h4>$159.00</h4>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-6 text-left">
-            <h6> Tax</h6>
+            <h4> Tax</h4>
           </div>
           <div class="col-sm-6 text-right">
-            <h6>$3.00</h6>
+            <h4>$3.00</h4>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-6 text-left">
-            <h6>Shipping</h6>
+            <h4>Shipping</h4>
           </div>
           <div class="col-sm-6 text-right">
-            <h6>S10.00</h6>
+            <h4>$10.00</h4>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-6 text-left">
-            <h6>Grand Total</h6>
+            <h4>Grand Total</h4>
           </div>
           <div class="col-sm-6 text-right">
-            <h6>$87.00</h6>
+            <h4>$172.00</h4>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12 ">
+          <div class="col-sm-12">
             <div class="form-group">
-              <button id="checkout" type="button" class="btn btn-success btn-block">Check Out!</button>
+              <button id="placeorder" type="button" class="btn btn-default buttonOrder btn-block">Place An Order</button>
             </div>
           </div>
         </div>
@@ -98,9 +136,8 @@
 
 
 
-
   <!-- Scripts go here. -->
   <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script>
-  <script type="text/javascript" src="js/global.js"></script>
+  <!-- <script type="text/javascript" src="js/global.js"></script> -->
 </body>
 </html>
