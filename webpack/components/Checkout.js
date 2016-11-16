@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Checkout extends Component {
+class Checkout extends React.Component {
     constructor(props){
         super(props)
     }
