@@ -8,20 +8,22 @@ class Home extends React.Component {
     render () {
         return (
             <div>
+                <div className="background-img">
+                </div>
             <nav>
-                <div className="container">
+                <div className="container nav-links">
                   <div className="row">
                     <div className="col-sm-3">
-                      <Link to="/"><button>Home</button></Link>
+                      <Link to="/"><button className="btn btn-default">Home</button></Link>
                     </div>
                     <div className="col-sm-3">
-                     <Link to="/singleitem"> <button>SingleItem</button></Link>
+                     <Link to="/singleitem"> <button className="btn btn-default">SingleItem</button></Link>
                     </div>
                     <div className="col-sm-3">
-                    <Link to="/thanks">  <button>Thanks</button></Link>
+                    <Link to="/thanks">  <button className="btn btn-default">Thanks</button></Link>
                     </div>
                     <div className="col-sm-3">
-                     <Link to="/checkout"> <button>checkout</button></Link>
+                     <Link to="/checkout"> <button className="btn btn-default">checkout</button></Link>
                     </div>
                   </div>
                 </div>
@@ -29,9 +31,7 @@ class Home extends React.Component {
         <div className="container middle-container">
               <div className="row">
                 <div className="col-sm-2">
-                  <p>
-                    Show results for:
-                  </p>
+                  <input type="text" className="form-control" placeholder="Search for patches" />
                   <div className="middle-left-one">
                     Categories
                     <ul>
@@ -48,33 +48,34 @@ class Home extends React.Component {
                     Sort Patches By:
                   </p>
                   <div className="middle-left-two">
-                    <button type="radio"><a href="#">Small</a></button><br />
-                              <button type="radio"><a href="#">Medium</a></button><br />
-                            <button type="radio"><a href="#">Large</a></button><br />
-                              <button type="radio"><a href="#">Brand</a></button><br />
-                           <button type="radio"><a href="#">Price Low-High</a></button><br />
-                      <button type="radio"><a href="#">Price High-Low</a></button><br />
+                      <select className="form-control input-sm">
+                        <option>Year</option>
+                        <option>Brand</option>
+                        <option>Price:Low</option>
+                        <option>Price:High</option>
+                      </select>
                     <hr />
                   </div>
                 </div>
         <div className="col-sm-10">
-          <h1 className="text-center"> Featured Patches </h1>
+          <h1 className="text-center">Featured Patches </h1>
           <div className="col-sm-3 patchDivs">
             <div className="col-sm-12"><img src="http://unsplash.it/300/200?random" /></div>
-            <div className="col-sm-12">Title goes here</div>
+            <div className="col-sm-12"><b>Title goes here</b></div>
             <div className="col-sm-12">Description goes here</div>
-            <div className="col-sm-6 col-sm-offset-8"><button className="btn btn-primary">Add to cart</button></div>
+            <div className="col-sm-6 col-sm-offset-8"><b>$50</b></div>
           </div>
           <div className="col-sm-3 patchDivs">
             <div className="col-sm-12"><img src="http://unsplash.it/300/200?random" /></div>
-            <div className="col-sm-12">Title goes here</div>
+            <div className="col-sm-12"><b>Title goes here</b></div>
             <div className="col-sm-12">Description goes here</div>
-            <div className="col-sm-6 col-sm-offset-8"><button className="btn btn-primary">Add to cart</button></div>
-          </div>  <div className="col-sm-3 patchDivs">
+            <div className="col-sm-6 col-sm-offset-8"><b>$50</b></div>
+          </div>
+          <div className="col-sm-3 patchDivs">
             <div className="col-sm-12"><img src="http://unsplash.it/300/200?random" /></div>
-            <div className="col-sm-12">Title goes here</div>
+            <div className="col-sm-12"><b>Title goes here</b></div>
             <div className="col-sm-12">Description goes here</div>
-            <div className="col-sm-6 col-sm-offset-8"><button className="btn btn-primary">Add to cart</button></div>
+            <div className="col-sm-6 col-sm-offset-8"><b>$50</b></div>
           </div>
           <hr />
         </div>
