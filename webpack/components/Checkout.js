@@ -6,93 +6,118 @@ class Checkout extends Component {
     }
     render(){
         return (<div>
+            <div className="thumbnail">
+                <img src="images/iron-glory-assets/iron-glory-logo.png" />
+            </div>
+
             <div className="container">
-        <h1> My Cart</h1>
-      </div>
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-8">
-            <div className="row">
-              <div className="col-sm-6">
-                <h5>PRODUCT</h5>
-              </div>
-              <div className="col-sm-6 flexPQS">
+                <h2> My Cart</h2>
+            </div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-8">
+                        <div className="row">
+                            <div className="col-sm-12 panel">
+                                <h3>PRODUCTS</h3>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div>
+                                <div className="col-sm-4 thumbnail">
+                                    <img src="images/iron-glory-assets/iron-glory-products/igp8.png" />
+                                </div>
+                                <div className="col-sm-8 ">
+                                    <div className="row">
+                                        <div className="col-sm-12">
+                                            <h3>Have a Nice Day Badge</h3>
+                                        </div>
+                                        <div className="col-sm-12 text-muted">
+                                            <p>Brighten your world with this happy little patch from the sixties.</p>
+                                        </div>
 
-                <h5>  PRICE  </h5>
-                <h5>  QTY </h5>
-                <h5>  SUBTOTAL </h5>
+                                        <div className="col-sm-12">
+                                            <h3>$159</h3>
+                                        </div>
+                                        <div className="col-sm-12">
+                                            <h5>Quantity</h5>
 
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-1">
-                <label>
-                  <input type="hidden" name="delete" value="no" />
-                  <input type="checkbox" name="delete" value="yes" />
-                </label>
-              </div>
-              <div className="col-sm-2">
-                <h6>tn</h6>
-              </div>
-              <div className="col-sm-3">
-                <h5>Have a Nice Day Badge</h5>
-              </div>
-              <div className="col-sm-6 flexPQS">
-                <h6>  $159.00  </h6>
-                <h6>  1 </h6>
-                <h6>  $159.00 </h6>
-              </div>
-            </div>
-          </div>
+                                        </div>
+                                        <div className="col-sm-4 ">
+                                            <div className="form-group">
 
-          <div className="col-sm-4">
-            <h4>Order Total</h4>
-            <div className="row">
-              <div className="col-sm-6 text-left">
-                <h6>Subtotal</h6>
-              </div>
-              <div className="col-sm-6 text-right">
-                <h6>$74.00</h6>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-6 text-left">
-                <h6> Tax</h6>
-              </div>
-              <div className="col-sm-6 text-right">
-                <h6>$3.00</h6>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-6 text-left">
-                <h6>Shipping</h6>
-              </div>
-              <div className="col-sm-6 text-right">
-                <h6>$10.00</h6>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-6 text-left">
-                <h6>Grand Total</h6>
-              </div>
-              <div className="col-sm-6 text-right">
-                <h6>$87.00</h6>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-12 ">
-                <div className="form-group">
-                  <button id="checkout" type="button" className="btn btn-success btn-block">Place an Order</button>
+                                                <input type="text" id="itemQuantity" name="itemQuantity" className="form-control"  />
+                                            </div>
+                                        </div>
+                                        <div className="col-sm-4 text-danger">
+                                            <h5>Remove</h5>
+                                        </div>
+                                        <div className="col-sm-4">
+                                            <h5>Update Cart</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-sm-4 ">
+                        <div className="row">
+                            <div className="col-sm-12 panel">
+                                <h3>Order Total</h3>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-6 text-left">
+                                <h5>Subtotal</h5>
+                            </div>
+                            <div className="col-sm-6 text-right">
+                                <h5>$159.00</h5>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-6 text-left">
+                                <h5> Tax</h5>
+                            </div>
+                            <div className="col-sm-6 text-right">
+                                <h5>$3.00</h5>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-6 text-left">
+                                <h5>Shipping</h5>
+                            </div>
+                            <div className="col-sm-6 text-right">
+                                <h5>$10.00</h5>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-6 text-left">
+                                <h5>Grand Total</h5>
+                            </div>
+                            <div className="col-sm-6 text-right">
+                                <h5>$172.00</h5>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-6">
+                                <div className="form-group">
+                                    <button id="checkout" type="button" className="btn btn-success btn-block">Continue Shopping</button>
+                                </div>
+                            </div>
+                            <div className="col-sm-6">
+                                <div className="form-group">
+                                    <button id="placeorder" type="button" className="btn btn-success btn-block">Place An Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      </div>
 
-        )
-    }
+        </div>
+
+    )
+}
 }
 
 export default Checkout
