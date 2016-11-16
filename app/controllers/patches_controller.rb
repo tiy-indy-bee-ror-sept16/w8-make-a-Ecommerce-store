@@ -1,11 +1,11 @@
 class PatchesController < ApplicationController
 
   def index
-    if current_user
-      @user = current_user
-    else
-      @user = User.new
-    end
+    # if current_user
+    #   @user = current_user
+    # else
+    #   @user = User.new
+    # end
     @patches = Patch.all
     render json: @patches
   end
@@ -13,6 +13,7 @@ class PatchesController < ApplicationController
 
   def show
     @patch = Patch.find(params[:id])
+    render json: @patch
   end
 
   def new
