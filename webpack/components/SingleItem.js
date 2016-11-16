@@ -27,6 +27,12 @@ class SingleItem extends React.Component {
         ))
         return (
             <div className="container-fluid">
+                <div class="row">
+                    <ul class="singleItemNavBar">
+                      <li>Home</li>
+                      <li class="cart">Cart</li>
+                    </ul>
+                </div>
                 <div className="row">
                     <main>
                         <section className="singleItem-disp">
