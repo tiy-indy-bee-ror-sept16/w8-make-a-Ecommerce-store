@@ -6,10 +6,28 @@ body, img {
   width: 100%;
 }
 
-.singleItem_navbar {
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
-  box-shadow: 2px 2px 2px solid gray;
+.singleItemNavBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.singleItemNavBar li {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.singleItemNavBar li:hover {
+  background-color: #111;
+}
+
+.singleItemNavBar .cart {
+  float: right;
 }
 
 .singleItem-disp {
