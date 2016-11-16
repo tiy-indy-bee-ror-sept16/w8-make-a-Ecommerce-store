@@ -4,8 +4,27 @@ import { Link } from 'react-router'
 class Home extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            patches: []
+        }
+    }
+    componentDidMount(){
+        fetch('/patches')
+        .then(response => response.json())
+        .then(response => this.setState({patches: response}))
+            // console.log(response))
     }
     render () {
+            var patches = this.state.patches.map((patch, i) =>(
+                <Link to={'/singleitem/' + patch.id} key={i}>
+                    <div className="col-sm-3 patchDivs" >
+                      <div className="col-sm-12"><img src="http://unsplash.it/300/200?random" /></div>
+                      <div className="col-sm-12"><b>{patch.product}</b></div>
+                      <div className="col-sm-12 patches-description">{patch.description}</div>
+                      <div className="col-sm-6 col-sm-offset-8"><b>{patch.price}</b></div>
+                    </div>
+                </Link>
+            ))
         return (
             <div>
                 <div className="background-img">
@@ -59,24 +78,7 @@ class Home extends React.Component {
                 </div>
         <div className="col-sm-10">
           <h1 className="text-center">Featured Patches </h1>
-          <div className="col-sm-3 patchDivs">
-            <div className="col-sm-12"><img src="http://unsplash.it/300/200?random" /></div>
-            <div className="col-sm-12"><b>Title goes here</b></div>
-            <div className="col-sm-12">Description goes here</div>
-            <div className="col-sm-6 col-sm-offset-8"><b>$50</b></div>
-          </div>
-          <div className="col-sm-3 patchDivs">
-            <div className="col-sm-12"><img src="http://unsplash.it/300/200?random" /></div>
-            <div className="col-sm-12"><b>Title goes here</b></div>
-            <div className="col-sm-12">Description goes here</div>
-            <div className="col-sm-6 col-sm-offset-8"><b>$50</b></div>
-          </div>
-          <div className="col-sm-3 patchDivs">
-            <div className="col-sm-12"><img src="http://unsplash.it/300/200?random" /></div>
-            <div className="col-sm-12"><b>Title goes here</b></div>
-            <div className="col-sm-12">Description goes here</div>
-            <div className="col-sm-6 col-sm-offset-8"><b>$50</b></div>
-          </div>
+          {patches}
           <hr />
         </div>
         </div>
