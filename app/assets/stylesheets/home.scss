@@ -25,3 +25,9 @@ img{
 .price{
     color: red;
 }
+.patches-description{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow:  hidden;
+    width: 50%;
+}
