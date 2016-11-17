@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116213126) do
+ActiveRecord::Schema.define(version: 20161117031030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20161116213126) do
   end
 
   create_table "patches", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "product"
     t.string   "sku"
     t.integer  "price"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20161116213126) do
     t.string   "size"
     t.integer  "category_id"
     t.string   "image_id"
+    t.integer  "price_cents",    default: 0,     null: false
+    t.string   "price_currency", default: "USD", null: false
   end
 
   create_table "users", force: :cascade do |t|
