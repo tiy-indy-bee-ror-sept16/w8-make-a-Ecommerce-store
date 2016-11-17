@@ -5,9 +5,7 @@ class Patch < ApplicationRecord
   belongs_to :category
   attachment :image
 
-
   # scope :name, -> { where(:name true) }
   # pg_search_scope :search_by_name, {:associated_against => against: :name}
-
 
 end

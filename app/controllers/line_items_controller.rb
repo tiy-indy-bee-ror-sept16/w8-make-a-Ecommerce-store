@@ -13,13 +13,7 @@ class LineItemsController < ApplicationController
       quantity: params[:quantity],
       cart_id: Cart.new
     end
-
-    if @line_item.save
-      render json: @line_item
-    else
-      render json: @line_item.errors.full_messages, status: :unprocessable_entity
-    end
-  end
+    
 
   def update
     @line_item = LineItem.new(quanity: params[:quanity])
