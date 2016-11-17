@@ -24,9 +24,9 @@ gem "refile", require: "refile/rails", github: 'refile/refile'
 gem "refile-mini_magick"
 gem 'refile-postgres', '~> 1.4'
 gem 'stripe'
-gem 'foreman'
 gem 'rollbar'
 gem 'oj', '~> 2.12.14'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5'

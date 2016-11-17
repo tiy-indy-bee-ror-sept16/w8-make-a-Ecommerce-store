@@ -20,3 +20,6 @@
 /public/webpack
 .DS\_Store
 *.sw?
+
+# Ignore application configuration
+/config/application.yml
