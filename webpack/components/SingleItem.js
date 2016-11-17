@@ -30,7 +30,7 @@ class SingleItem extends React.Component {
             </div> */}
             <div className="container-fluid">
                 <div className="row">
-                    <main>
+                    <main className="singleItem-body">
                         <section className="singleItem-disp">
                             <div className="col-sm-6">
                                 <div className="row">
@@ -41,14 +41,16 @@ class SingleItem extends React.Component {
                                 </div>
                                 <div className="row singleItem_avail_section">
                                     <div className="col-sm-12">
-                                        <label tabIndex="0" htmlFor="patch availability">Available</label>
-                                        <ul htmlFor="list of available sizes" className="list-inline">
-                                            <li>1</li>
-                                            <li>5</li>
-                                            <li>10</li>
-                                            <li>12</li>
-                                            <li>15</li>
-                                        </ul>
+                                        <div className="form-group">
+                                            <label forHTML="pathAvailability">Available Sizes</label>
+                                            <select className="form-control" name="available_sizes" id="qty">
+                                                <option value="" selected>1</option>
+                                                <option value="">5</option>
+                                                <option value="">10</option>
+                                                <option value="">12</option>
+                                                <option value="">15</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
