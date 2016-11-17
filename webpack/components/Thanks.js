@@ -1,4 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router'
+import Nav from './Nav'
+import Footer from './Footer'
 
 class Thanks extends React.Component {
     constructor(props){
@@ -6,6 +9,8 @@ class Thanks extends React.Component {
     }
     render(){
         return (
+            <div>
+                <Nav />
             <div className="container thankyou-container">
             <div className="row">
               <div className="col-sm-12">
@@ -14,7 +19,9 @@ class Thanks extends React.Component {
                 <h1>Thank You, <br/>Iron Glory Team</h1>
                 </div>
               </div>
-              <div className="col-sm-4 col-sm-offset-8"><button className="btn btn-block">Back to Home</button></div>
+              <div className="col-sm-4 col-sm-offset-8"><Link to="/"><button className="btn btn-block">Back to Home</button></Link></div>
+          </div>
+          <Footer />
           </div>
         )
     }

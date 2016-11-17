@@ -1,5 +1,6 @@
 import React from 'react'
-
+import { Link } from 'react-router'
+import Nav from './Nav'
 class SingleItem extends React.Component {
     constructor(props){
         super(props)
@@ -17,13 +18,17 @@ class SingleItem extends React.Component {
     }
     render(){
         return (
-            <div className="container-fluid">
+            <div>
+                <Nav />
+            {/* <div className="container-fluid">
                 <div className="row">
                     <ul className="singleItemNavBar">
                       <li>Home</li>
                       <li className="cart">Cart</li>
                     </ul>
                 </div>
+            </div> */}
+            <div className="container-fluid">
                 <div className="row">
                     <main>
                         <section className="singleItem-disp">
@@ -74,14 +79,14 @@ class SingleItem extends React.Component {
                                 </div> */}
                                 <div className="row text-center">
                                     <div className="col-sm-6"><button className="btn btn-success singleItem_desc_btn">Add To Cart</button></div>
-                                    <div className="col-sm-6"><button className=" btn btn-primary singleItem_desc_btn">Back To Patches</button></div>
+                                    <div className="col-sm-6"><Link to="/"><button className=" btn btn-primary singleItem_desc_btn">Back To Patches</button></Link></div>
                                 </div>
                             </div>
                         </section>
                     </main>
                 </div>
             </div>
-
+        </div>
         )
     }
 }

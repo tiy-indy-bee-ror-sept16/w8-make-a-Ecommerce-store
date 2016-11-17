@@ -26,6 +26,11 @@ body, img {
   background-color: #111;
 }
 
+.singleItemNavBar li img {
+  width: 150px;
+  height: 25px;
+}
+
 .singleItemNavBar .cart {
   float: right;
 }

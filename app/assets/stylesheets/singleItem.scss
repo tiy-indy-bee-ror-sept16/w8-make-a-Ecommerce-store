@@ -14,7 +14,7 @@ body, img {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;   
+    background-color: #333;
     li {
         float: left;
         display: block;
@@ -24,6 +24,10 @@ body, img {
     }
     li:hover {
     background-color: #111;
+    }
+    li img{
+        width:150px;
+        height: 25px;
     }
     .cart {
         float: right;
