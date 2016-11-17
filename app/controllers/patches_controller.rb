@@ -38,27 +38,17 @@ class PatchesController < ApplicationController
    redirect_to :root
   end
 
-  # def create
-  #   @patch = Patch.new(patch_params)
-  #   if @patch.save!
-  #     render json: @patches
-  #   end
-  # else
-  #   render json: @patches
-  # end
+  def create
+    @patch = Patch.new(patch_params)
+    if @patch.save!
+      render json: @patches
+    end
+  else
+    render json: @patches.errors.full_messages, status: :unprocessable_entity
+  end
 
-  #Ransack...
 
-    # def filter
-    #   @patches = Patch.all
-    #   if params[:search]
-    #     @patches = @patches.search_by_name(params[:search])
-    #   end
-    #   @patches.order(params[:order] || { created_at: :desc })
-    #   @patches = @patches.ransack(params[:filter]).result
-    #   @patches = @patches.to_a.uniq
-    #   render json: @patches
-    # end
+
 
   def edit
 
@@ -71,7 +61,7 @@ class PatchesController < ApplicationController
   private
 
   def patch_params
-    params.require(:patch).permit(:product, :sku, :price, :available, :year, :description, :category)
+    params.permit(:product, :sku, :price, :available, :year, :description, :category)
   end
 
 end
