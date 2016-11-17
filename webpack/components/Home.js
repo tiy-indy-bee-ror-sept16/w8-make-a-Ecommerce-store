@@ -6,8 +6,12 @@ import Footer from './Footer'
 class Home extends React.Component {
     constructor(props) {
         super(props)
+        this.search = this.search.bind(this)
+        this.typing = this.typing.bind(this)
+        this.updateSearch = this.updateSearch.bind(this)
         this.state = {
-            patches: []
+            patches: [],
+            filter: '',
         }
     }
     componentDidMount(){
@@ -15,6 +19,29 @@ class Home extends React.Component {
         .then(response => response.json())
         .then(response => this.setState({patches: response}))
     }
+    typing(e){
+        this.setState({
+            filter: e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1)
+        })
+    }
+    search(e){
+        if(e.key === 'Enter'){
+            var searchResults = this.state.filter
+            this.setState({
+                filter: e.target.value
+            })
+            this.updateSearch(searchResults)
+            this.setState({
+                filter: ''
+            })
+        }
+    }
+    updateSearch(searchResults){
+        fetch('/api/filter?filter[category_name_eq]=' + this.state.filter)
+        .then(response => response.json())
+        .then(response => this.setState({patches: response}))
+    }
+
     render () {
         var patches = this.state.patches.map((patch, i) => {
             return <Link to={'/singleitem/' + patch.id} key={i}>
@@ -35,7 +62,7 @@ class Home extends React.Component {
                 <div className="container-fluid middle-container">
                       <div className="row">
                           <div className="col-sm-12">
-                              <input type="text" className="form-control" placeholder="Search for patches" />
+                              <input type="text" className="form-control" placeholder="Search for patches" value={this.state.filter} onKeyPress={this.search} onChange={this.typing}/>
                               <br/>
                               <div className="col-sm-6">
                         <p>

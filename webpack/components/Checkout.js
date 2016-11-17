@@ -5,12 +5,68 @@ import Footer from './Footer'
 class Checkout extends React.Component {
   constructor(props){
     super(props)
+    this.state = {
+      patches: []
+    }
   }
+  componentDidMount(){
+    fetch('/api/patches')
+    .then(response => response.json())
+    .then(response => this.setState({patches: response}))
+  }
+
   render(){
+    var patches = this.state.patches.map((patch, i) => {
+      return         <div className="row" key={i}>
+                      <div className="col-sm-4 thumbnail">
+                        <img src={patch.image} />
+                      </div>
+                      <div className="col-sm-8 ">
+                        <div className="row">
+                          <div className="col-sm-12">
+                            <h3>{patch.title}</h3>
+                          </div>
+                          <div className="col-sm-12 text-muted">
+                            <p>{patch.description}</p>
+                          </div>
+
+                          <div className="col-sm-12">
+                            <h3>${patch.price / 100}</h3>
+                          </div>
+                          <div className="col-sm-12">
+                            <h5>Quantity</h5>
+
+                          </div>
+                          <div className="col-sm-4 ">
+                            <select className="form-control">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                            </select>
+                          </div>
+                          <div className="col-sm-4 text-danger">
+                            <div className="form-group">
+                              <button id="delete" type="button" className="btn btn-default btn-block">Delete</button>
+                            </div>
+                          </div>
+                          <div className="col-sm-4">
+                            <div className="form-group">
+                              <button id="updateCart" type="button" className="btn btn-default btn-block">Update Cart</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+    })
     return (<div>
         <Nav />
-    
-
       <div className="container">
         <h2> My Cart</h2>
       </div>
@@ -26,57 +82,11 @@ class Checkout extends React.Component {
               </div>
             </div>
             <div className="row">
-              <div>
-                <div className="col-sm-4 thumbnail">
-                  <img src="/images/iron-glory-assets/iron-glory-products/igp8.png" />
-                </div>
-                <div className="col-sm-8 ">
-                  <div className="row">
-                    <div className="col-sm-12">
-                      <h3>Have a Nice Day Badge</h3>
-                    </div>
-                    <div className="col-sm-12 text-muted">
-                      <p>Brighten your world with this happy little patch from the sixties.</p>
-                    </div>
-
-                    <div className="col-sm-12">
-                      <h3>$159</h3>
-                    </div>
-                    <div className="col-sm-12">
-                      <h5>Quantity</h5>
-
-                    </div>
-                    <div className="col-sm-4 ">
-                      <select className="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                      </select>
-                    </div>
-                    <div className="col-sm-4 text-danger">
-                      <div className="form-group">
-                        <button id="delete" type="button" className="btn btn-default btn-block">Delete</button>
-                      </div>
-                    </div>
-                    <div className="col-sm-4">
-                      <div className="form-group">
-                        <button id="updateCart" type="button" className="btn btn-default btn-block">Update Cart</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {patches}
             </div>
           </div>
-          <div className="col-sm-1">
 
+          <div className="col-sm-1">
           </div>
           <div className="col-sm-4 ">
             <div className="row">
