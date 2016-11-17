@@ -6,11 +6,12 @@ class Checkout extends React.Component {
   constructor(props){
     super(props)
   }
+  componentDidMount(){
+      
+  }
   render(){
     return (<div>
         <Nav />
-    
-
       <div className="container">
         <h2> My Cart</h2>
       </div>
