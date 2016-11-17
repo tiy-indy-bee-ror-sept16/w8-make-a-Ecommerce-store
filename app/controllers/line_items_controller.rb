@@ -1,41 +1,28 @@
 class LineItemsController < ApplicationController
 
-  def new
-    @item = Item.new
-    @patch = Patch.find(params [:id])
-  end
-
   def create
+    if params[:token]
+      @line_item = LineItem.new(
+      patch_id: params[:patch_id],
+      quantity: params[:quantity],
+      cart_id: Cart.where(token: params[:token]).first
+      )
+    else
+      @line_item = LineItem.new(
+      patch_id: params[:patch_id],
+      quantity: params[:quantity],
+      cart_id: Cart.new
+    end
     
-  end
 
   def update
-    @patch = Patch.find(params[:id])
-    if @patch.update(patch_params)
-      flash[:notice]="Patch was added to your cart"
-      render json: @patch
-    else
-      flash[:notice]="Try that again"
-      render json: @patch
-    end
+    @line_item = LineItem.new(quanity: params[:quanity])
   end
 
-
-  private
-
-  def update_cart
-    total = 0
-    @cart.each do |x|
-      total = total + (x.patch.price*x.quantity)
-    end
-    @cart.update(total: total)
-    render json: @cart
+  def destroy
+    @line_item = LineItem.find(params :id)
+    @line_item.destroy!
+    render json: "Patch removed"
   end
-
-
-  def item_params
-    params.require(:item).permit(:sku, :quantity)
-  end
-
 
 end

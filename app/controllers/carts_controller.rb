@@ -1,33 +1,15 @@
 class CartsController < ApplicationController
 
-
-  def index
-    # if current_user
-    #   @cart = current_user.cart
-    # else
-      @cart = Cart.new
-      @cart.save!
-      render json: @cart
-    end
-    @patches = @cart.patches
+  def show
+    @cart = Cart.find_by(token: params[:token])
+    render json: @cart.line_items
   end
 
-  def create
-    @cart = Cart.new(cart_params)
-    # if current_user
-    #   @cart.user = current_user
-    end
-    if @cart.save
+  def update
+    @cart = Cart.find_by(token: params[:token]),
+    @cart.ship_to_address = params[:ship_to_address],
+    @cart.email = params[:email],
     render json: @cart
-  else
-    render json: @cart.errors.full_messages, status: :unprocessable_entity
   end
-
-  private
-
-  def cart_params
-    params.permit(:email,:line_items)
-  end
-
-
+  
 end

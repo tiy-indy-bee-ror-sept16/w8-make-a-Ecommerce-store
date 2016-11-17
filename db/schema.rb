@@ -10,14 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117183554) do
+ActiveRecord::Schema.define(version: 20161117203522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "carts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "token"
+    t.string   "ship_to_address"
+    t.string   "email"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -31,6 +34,8 @@ ActiveRecord::Schema.define(version: 20161117183554) do
     t.string   "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "cart_id"
+    t.integer  "patch_id"
   end
 
   create_table "patches", force: :cascade do |t|
