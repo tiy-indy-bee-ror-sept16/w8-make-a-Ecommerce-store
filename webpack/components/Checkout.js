@@ -1,4 +1,6 @@
 import React from 'react'
+import Nav from './Nav'
+import Footer from './Footer'
 
 class Checkout extends React.Component {
   constructor(props){
@@ -6,6 +8,7 @@ class Checkout extends React.Component {
   }
   render(){
     return (<div>
+        <Nav />
       <div className="thumbnail">
         <img src="/images/iron-glory-assets/iron-glory-logo.png" />
       </div>
@@ -125,7 +128,7 @@ class Checkout extends React.Component {
           </div>
         </div>
       </div>
-
+      <Footer />
     </div>
 
   )
