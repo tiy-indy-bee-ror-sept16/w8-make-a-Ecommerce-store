@@ -4,7 +4,8 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = 500
+    @cart = Cart.find(params[:cart_id])
+    @amount = @cart.cart_subtotal
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -14,9 +15,11 @@ class ChargesController < ApplicationController
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => @amount,
-      :description => 'Rails Stripe customer',
+      :description => 'Iron Glory customer',
       :currency    => 'usd'
     )
+
+    render json: ["Thank you for shopping with us!"]
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
