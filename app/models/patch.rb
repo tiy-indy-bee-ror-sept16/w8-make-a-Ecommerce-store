@@ -4,4 +4,5 @@ class Patch < ApplicationRecord
   belongs_to :category
   attachment :image
   monetize :price_cents
+
 end

@@ -15,18 +15,21 @@ class Home extends React.Component {
             // console.log(response))
     }
     render () {
-            var patches = this.state.patches.map((patch, i) =>(
-                <Link to={'/singleitem/' + patch.id} key={i}>
-                    <div className="col-sm-3 patchDivs" >
-                      <div className="col-sm-12"><img src="http://unsplash.it/300/200?random" /></div>
-                      <div className="col-sm-12"><b>{patch.product}</b></div>
-                      <div className="col-sm-12 patches-description">{patch.description}</div>
-                      <div className="col-sm-6 col-sm-offset-8"><b>{patch.price}</b></div>
-                    </div>
-                </Link>
-            ))
+        var patches = this.state.patches.map((patch, i) => {
+            // console.log(patch)
+            return <Link to={'/singleitem/' + patch.id} key={i}>
+                <div className="col-sm-3 patchDivs" >
+                  <div className="col-sm-12"><img src={patch.image} /></div>
+                  <div className="col-sm-12"><b>{patch.product}</b></div>
+                  <div className="col-sm-12 patches-description">{patch.description}</div>
+                  <div className="col-sm-6 col-sm-offset-8"><b>${patch.price}</b></div>
+                </div>
+            </Link>
+        })
+
         return (
             <div>
+                <Link to={'/singleitem/1'}>Test</Link>
                 <div className="background-img">
                 </div>
             <nav>
@@ -54,12 +57,8 @@ class Home extends React.Component {
                   <div className="middle-left-one">
                     Categories
                     <ul>
-                      <li><a href="#">Category 1</a></li>
-                      <li><a href="#">Category 1</a></li>
-                      <li><a href="#">Category 1</a></li>
-                      <li><a href="#">Category 1</a></li>
-                      <li><a href="#">Category 1</a></li>
-                      <li><a href="#">Category 1</a></li>
+                      <li>Category 1</li>
+
                     </ul>
                   </div>
                   <br />
