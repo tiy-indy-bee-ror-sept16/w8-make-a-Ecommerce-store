@@ -9,9 +9,7 @@ class Checkout extends React.Component {
   render(){
     return (<div>
         <Nav />
-      <div className="thumbnail">
-        <img src="/images/iron-glory-assets/iron-glory-logo.png" />
-      </div>
+    
 
       <div className="container">
         <h2> My Cart</h2>

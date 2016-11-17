@@ -13,12 +13,21 @@ class CartsController < ApplicationController
   end
 
   def create
-    @cart = Cart.new()
+    @cart = Cart.new(cart_params)
     # if current_user
     #   @cart.user = current_user
     end
-    @cart.save
+    if @cart.save
     render json: @cart
+  else
+    render json: @cart.errors.full_messages, status: :unprocessable_entity
   end
+
+  private
+
+  def cart_params
+    params.permit(:email,:line_items)
+  end
+
 
 end
