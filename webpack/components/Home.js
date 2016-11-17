@@ -11,7 +11,7 @@ class Home extends React.Component {
         }
     }
     componentDidMount(){
-        fetch('/patches')
+        fetch('/api/patches')
         .then(response => response.json())
         .then(response => this.setState({patches: response}))
     }
@@ -22,7 +22,7 @@ class Home extends React.Component {
                   <div className="col-sm-12"><img src={patch.image}/></div>
                   <div className="col-sm-12"><b>{patch.product}</b></div>
                   <div className="col-sm-12 patches-description">{patch.description}</div>
-                  <div className="col-sm-6 col-sm-offset-7"><b>${patch.price.fractional}</b></div>
+                  <div className="col-sm-6 col-sm-offset-7"><b>${patch.price / 100}</b></div>
                 </div>
             </Link>
         })
