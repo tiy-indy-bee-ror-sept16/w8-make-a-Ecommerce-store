@@ -4,8 +4,14 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @cart = Cart.find(params[:cart_id])
-    @amount = @cart.cart_subtotal
+
+    #keep code below until cart is ready
+    # @cart = Cart.find(params[:cart_id])
+    # @amount = @cart.cart_subtotal
+
+    #writing a test so frontend can by a patch without cart
+    @cart = Patch.find(params[:patch_id])
+    @amount = @patch.price
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
