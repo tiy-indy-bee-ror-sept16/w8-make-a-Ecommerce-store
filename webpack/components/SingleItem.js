@@ -67,8 +67,16 @@ class SingleItem extends React.Component {
                                         <h3 tabIndex="0">Patch Name: <em>{this.state.item.product}</em></h3>
                                         <h3 tabIndex="0">Patch Sku: <em>{this.state.item.sku}</em></h3>
                                         <h3 tabIndex="0">Patch Price: <em>&#36; {this.state.item.price}</em></h3>
-                                        <h4 tabIndex="0">Patch Description</h4>
+                                        <h3 tabIndex="0">Patch Description: </h3>
                                         <p>{this.state.item.description}</p>
+                                        <label htmlFor="select quantity">Select Qty.</label>
+                                        <select className="form-control" id="selectQuantity">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
                                     </div>
                                 </div>
                                 {/* <div className="row singleItem_desc_sec">
