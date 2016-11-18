@@ -27,13 +27,25 @@ class SingleItem extends React.Component {
         })
     }
     addToCart(){
-        fetch('/api/line_items?patch_id=' + this.state.id , {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-    })
-}
+        var token = sessionStorage.getItem('cart_token')
+
+        fetch('/api/line_items', {
+            method: 'POST',
+            body: JSON.stringify({
+                quantity: this.state.quantity,
+                patch_id: this.state.id,
+                token: token
+            }),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response)
+            sessionStorage.setItem('cart_token', response.token)
+        })
+    }
     render(){
         var priceUpdate = this.state.item.price
         priceUpdate = priceUpdate / 100
