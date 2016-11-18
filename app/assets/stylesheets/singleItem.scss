@@ -11,7 +11,7 @@ body, img {
 //Styling for the Body
 .singleItemNavBar {
     list-style-type: none;
-    margin: 0 0 20px 0;
+    // margin: 0 0 20px 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
@@ -36,13 +36,14 @@ body, img {
 
     //Styling for the Main Page Display Section
     .singleItem-body {
-        margin-top: 60px;
+        padding-top: 60px;
     }
     .singleItem-disp {
         background-color: gray;
         img {
             box-shadow: 5px 5px 5px black;
         }
+        height: 95vh;
     }
     .singleItem_display {
         width: 60%;
@@ -54,12 +55,13 @@ body, img {
 
     //Styling for the Main Page Description Section
     .singleItem-desc {
-        // padding-top: 10px;
-        background: url(/images/iron-glory-assets/iron-glory-background.jpg);
+        padding-top: 10px;
+        background: url(../images/iron-glory-assets/iron-glory-background.jpg);
         img {
             width: 100%;
             box-shadow: 5px 5px 5px black;
         }
+        height: 95vh;
     }
     .singleItem_desc_sec {
         margin: 5px auto 20px auto;
