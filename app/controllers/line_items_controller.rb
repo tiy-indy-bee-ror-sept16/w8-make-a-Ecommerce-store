@@ -31,6 +31,5 @@ class LineItemsController < ApplicationController
     @line_item.destroy!
     render json: "Patch removed"
   end
->>>>>>> 902587333eea4208319d10a778e2dba0b2496782
 
 end
