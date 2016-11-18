@@ -1,7 +1,6 @@
 class LineItemsController < ApplicationController
 
-<<<<<<< HEAD
-=======
+
   def create
     if params[:token]
       @line_item = LineItem.new(
