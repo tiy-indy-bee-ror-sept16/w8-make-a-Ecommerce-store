@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   patch '/order_info' => 'carts#update'
   get '/view_cart' => 'carts#show'
   
-
   scope '/api' do
       get '/filter' => 'catagories#filter'
     resources :carts

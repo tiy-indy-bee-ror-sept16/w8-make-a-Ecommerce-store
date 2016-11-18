@@ -2,7 +2,7 @@ class CartsController < ApplicationController
 
   def show
     @cart = Cart.find_by(token: params[:token])
-    render json: @cart
+    render json: @cart, include: ['line_items.patch']
   end
 
   def update
