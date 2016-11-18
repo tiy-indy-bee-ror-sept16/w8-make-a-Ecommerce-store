@@ -7,7 +7,7 @@ class Checkout extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      patches: []
+      patches: [],
     }
   }
   componentDidMount(){
@@ -15,7 +15,6 @@ class Checkout extends React.Component {
     .then(response => response.json())
     .then(response => this.setState({patches: response}))
   }
-
   render(){
     var patches = this.state.patches.map((patch, i) => {
       return         <div className="row" key={i}>
@@ -77,9 +76,6 @@ class Checkout extends React.Component {
             <div className="row well well-sm">
               <div className="col-sm-6 ">
                 <h3>PRODUCTS</h3>
-              </div>
-              <div className="col-sm-6 ">
-                <a href="url"><h3>Continue Shopping</h3></a>
               </div>
             </div>
             <div className="row">
