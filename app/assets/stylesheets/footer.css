@@ -31,3 +31,8 @@ img {
 .footerIcons {
   padding-right: 10px;
 }
+
+.footerPad {
+  padding-top: 100px;
+  background: #F5F5F1;
+}

@@ -7,10 +7,13 @@ class CartsController < ApplicationController
 
   def update
     @cart = Cart.find_by(token: params[:token])
-    if @cart.update(cart_params)
+    @cart.update! (cart_params)
+    if @cart.save
+      if @cart.complete?
+        thank_you_email
       render json: @cart
     else
-      render json: @cart.errors.full_messages, status: :unprocessable_entity
+      render json: @cart.errors
     end
   end
 

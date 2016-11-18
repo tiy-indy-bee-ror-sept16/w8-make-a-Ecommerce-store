@@ -6,10 +6,12 @@ import { Link } from 'react-router'
 class Checkout extends React.Component {
   constructor(props){
     super(props)
+    this.handleQuantityChange.bind(this)
     this.state = {
       cart: {
         line_items: []
       },
+      quantity: 1,
     }
   }
   componentDidMount(){
@@ -18,8 +20,14 @@ class Checkout extends React.Component {
     .then(response => this.setState({cart: response}))
     // .then(response => {console.log(response)})
   }
+  handleQuantityChange(event) {
+      this.setState({
+          quantity: event.target.value
+      })
+  }
   render(){
     var patches = this.state.cart.line_items.map((lineItem, i) => {
+      var maxQty = lineItem.patch.available
       return         <div className="row" key={i}>
                       <div className="col-sm-4 thumbnail">
                         <img src={lineItem.patch.image} />
@@ -41,18 +49,7 @@ class Checkout extends React.Component {
 
                           </div>
                           <div className="col-sm-4 ">
-                            <select className="form-control">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                              <option>6</option>
-                              <option>7</option>
-                              <option>8</option>
-                              <option>9</option>
-                              <option>10</option>
-                            </select>
+                            <input className="form-control" type="number" name="quantity" id="quantity" step="1" min="1" max={maxQty} pattern="[0-9]*" inputMode="numeric" value={this.state.quantity} onChange={this.handleQuantityChange}/>
                           </div>
                           <div className="col-sm-4 text-danger">
                             <div className="form-group">

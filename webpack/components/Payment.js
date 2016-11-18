@@ -86,10 +86,11 @@ class Payment extends React.Component {
     submitOrder(e) {
         e.preventDefault()
         console.log('made it here')
+        var token = sesssionStorage.getItem('cart_token')
         fetch('/api/charges', {
-            body: {
-                first_name: this.state.first_name,
-            },
+            body: JSON.stringify({
+                token: token,
+            }),
             method: 'POST',
             header: {
                 'Content-Type': 'application/json'
