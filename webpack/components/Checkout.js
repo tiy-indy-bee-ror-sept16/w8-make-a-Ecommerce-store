@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from './Nav'
 import Footer from './Footer'
+import { Link } from 'react-router'
 
 class Checkout extends React.Component {
   constructor(props){
@@ -129,7 +130,8 @@ class Checkout extends React.Component {
             <div className="row">
               <div className="col-sm-12">
                 <div className="form-group">
-                  <button id="placeorder" type="button" className="btn btn-default buttonOrder btn-block">Place An Order</button>
+                  <Link to="/payment"><button id="placeorder" type="button" className="btn btn-default btn-block">Place An Order</button></Link>
+                  <Link to="/"><button id="checkoutBack" className="btn btn-success btn-block">Contiue Shopping</button></Link>
                 </div>
               </div>
             </div>

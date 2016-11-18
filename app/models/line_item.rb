@@ -1,6 +1,10 @@
 class LineItem < ApplicationRecord
-  has_many :patches
-  belongs_to :cart
 
-  # belongs_to :patches
+  belongs_to :cart
+  belongs_to :patches
+
+  def cost
+    item.price * quantity
+  end
+
 end

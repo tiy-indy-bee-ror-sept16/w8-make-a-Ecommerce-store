@@ -1,11 +1,6 @@
 class PatchesController < ApplicationController
 
   def index
-    # if current_user
-    #   @user = current_user
-    # else
-    #   @user = User.new
-    # end
     @patches = Patch.all
     render json: @patches
   end
@@ -16,39 +11,7 @@ class PatchesController < ApplicationController
     render json: @patch
   end
 
-  def new
-    @patch = Patch.new
-  end
-
-  # def create
-  #  @patch = Patch.new
-  #  @patch.name = params[:thing][:name]
-  #  @patch.body = params[:thing][:body]
-  #  @patch.save!
-  #  redirect_to :root
-  # end
-
-  def create
-    @patch = Patch.new(patch_params)
-     if @patch.save!
-      render json: @patches
-    else
-     render json: @patches
-   end
-   redirect_to :root
-  end
-
-  def create
-    @patch = Patch.new(patch_params)
-    if @patch.save!
-      render json: @patches
-    end
-  else
-    render json: @patches.errors.full_messages, status: :unprocessable_entity
-  end
-
-
-
+  
 
   def edit
 
@@ -57,11 +20,4 @@ class PatchesController < ApplicationController
   def static
 
   end
-
-  private
-
-  def patch_params
-    params.permit(:product, :sku, :price, :available, :year, :description, :category)
-  end
-
 end
