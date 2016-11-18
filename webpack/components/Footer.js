@@ -27,6 +27,7 @@ class Footer extends React.Component {
                 </div>
                 <div className="col-sm-2">
               <h4>Legal</h4>
+                <a href="/"><h6>Privacy & Security</h6></a>
                 <a href="/"><h6>Shipping & Returns</h6></a>
                 </div>
               </div>
