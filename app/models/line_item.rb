@@ -3,8 +3,10 @@ class LineItem < ApplicationRecord
   belongs_to :cart
   belongs_to :patch
 
+  validates :cart, :patch, presence: true
+
   def cost
-    patch.cost * quantity
+    patch.price * quantity
   end
 
 
