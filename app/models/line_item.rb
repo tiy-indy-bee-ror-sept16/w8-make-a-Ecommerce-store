@@ -4,7 +4,7 @@ class LineItem < ApplicationRecord
   belongs_to :patch
 
   def cost
-    item.price * quantity
+    patch.price * quantity
   end
 
 end
