@@ -6,6 +6,7 @@ class ChargesController < ApplicationController
     # Amount in cents
 
     #keep code below until cart is ready
+
     @cart = Cart.find(params[:token])
     @amount = @cart.cart_subtotal
 
