@@ -5,7 +5,7 @@ class Cart < ApplicationRecord
   has_secure_token :token
 
   def subtotal
-    line_itmes.reduce(0){|sum , line_item| sum += line_item.cost}
+    line_items.reduce(0){|sum , line_item| sum += line_item.cost}
   end
 
   def taxes
