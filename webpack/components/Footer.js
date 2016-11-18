@@ -19,16 +19,16 @@ class Footer extends React.Component {
                 </div>
                 <div className="col-sm-2">
               <h4>About</h4>
-              <a href="/"><h6>About</h6></a>
+              <Link to="/About"><h6>About</h6></Link>
                 </div>
                 <div className="col-sm-2">
               <h4>Contact</h4>
-              <a href="/"><h6>Contact</h6></a>
+              <Link to="/Contact"><h6>Contact</h6></Link>
                 </div>
                 <div className="col-sm-2">
               <h4>Legal</h4>
-                <a href="/"><h6>Privacy & Security</h6></a>
-                <a href="/"><h6>Shipping & Returns</h6></a>
+                <Link to="/Legal"><h6>Privacy & Security</h6></Link>
+                <Link to="/Shipping"><h6>Shipping & Returns</h6></Link>
                 </div>
               </div>
             </div>
