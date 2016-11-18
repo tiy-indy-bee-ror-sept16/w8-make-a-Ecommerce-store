@@ -16,6 +16,7 @@ class CartsController < ApplicationController
       render json: @cart.errors
     end
   end
+  end
 
   private
 
