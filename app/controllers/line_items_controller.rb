@@ -4,9 +4,8 @@ class LineItemsController < ApplicationController
     if params[:token]
       @line_item = LineItem.new(
       patch_id: params[:patch_id],
-      token: params[:token],
       quantity: params[:quantity],
-      cart: Cart.where[token: params[:token]].first)
+      cart: Cart.where(token: params[:token]).first)
     else
       @line_item = LineItem.new(
       patch_id: params[:patch_id],
@@ -15,14 +14,20 @@ class LineItemsController < ApplicationController
     end
 
     if @line_item.save
-      render json: @line_item.cart
+      render json: @line_item.cart, include: ['line_items.patch']
     else
       render json: @line_item.errors.full_messages, status: :unprocessable_entity
     end
   end
 
   def update
-    @line_item = LineItem.new(quanity: params[:quanity])
+    @line_item = LineItem.find(params[:id])
+    @line_item.quantity = params[:quantity]
+    if @line_item.save
+      render json: @line_item.cart
+    else
+      render json: @line_item.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   def destroy
