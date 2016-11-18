@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'patches#static'
   get '/home' => 'patches#index'
+  post '/addtocart' => 'line_items#create'
+  patch '/order_info' => 'carts#update'
+  get '/view_cart' => 'carts#show'
 
   scope '/api' do
       get '/filter' => 'catagories#filter'
@@ -9,7 +12,7 @@ Rails.application.routes.draw do
     resources :users
     resources :patches
     resources :category
-    resources :charges
+    resources :charges, only: [:create]
   end
 
 
