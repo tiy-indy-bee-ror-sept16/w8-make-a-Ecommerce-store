@@ -16,7 +16,7 @@ class LineItemsController < ApplicationController
     end
 
     if @line_item.save
-      render json: @line_item
+      render json: @line_item.cart
     else
       render json: @line_item.errors.full_messages, status: :unprocessable_entity
     end
