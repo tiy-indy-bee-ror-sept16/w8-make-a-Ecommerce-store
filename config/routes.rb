@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :users
     resources :patches
     resources :category
-    resources :charges
+    resources :charges, only: [:create]
   end
 
 
