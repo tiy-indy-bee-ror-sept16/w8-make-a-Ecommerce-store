@@ -28,7 +28,6 @@ class SingleItem extends React.Component {
     }
     addToCart(){
         var token = sessionStorage.getItem('cart_token')
-
         fetch('/api/line_items', {
             method: 'POST',
             body: JSON.stringify({

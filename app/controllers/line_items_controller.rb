@@ -28,6 +28,7 @@ class LineItemsController < ApplicationController
     else
       render json: @line_item.errors.full_messages, status: :unprocessable_entity
     end
+  end
 
   def destroy
     @line_item = LineItem.find(params :id)
