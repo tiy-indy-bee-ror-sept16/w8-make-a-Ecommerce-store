@@ -3,7 +3,7 @@ class PatchSerializer < ActiveModel::Serializer
   has_many :line_items
 
   def image
-    Refile.attachment_url(object, :image, :fit, 100, 100, format: "png")
+    Refile.attachment_url(object, :image, :fit, 800, 800, format: "png")
   end
 
 end
