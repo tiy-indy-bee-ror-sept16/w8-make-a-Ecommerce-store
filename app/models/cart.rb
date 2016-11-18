@@ -1,11 +1,11 @@
 class Cart < ApplicationRecord
 
   has_many :line_items
-  has_many :patches, :through, :line_items
+  has_many :patches, through: :line_items
   has_secure_token :token
 
   def subtotal
-    line_itmes.reduce(0){|sum , line_itmes| sum += line.item.cost}
+    line_itmes.reduce(0){|sum , line_item| sum += line.item.cost}
   end
 
   def taxes
@@ -19,5 +19,10 @@ class Cart < ApplicationRecord
   def total
     subtotal + taxes + shipping
   end
+
+  def complete
+    self.complete = true
+  end
+
 
 end
