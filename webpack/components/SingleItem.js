@@ -5,7 +5,7 @@ class SingleItem extends React.Component {
     constructor(props){
         super(props)
         this.handleQuantityChange = this.handleQuantityChange.bind(this)
-        // this.addToCart = this.addToCart.bind(this)
+        this.addToCart = this.addToCart.bind(this)
         this.state = {
             id: window.location.href.split('/')[4],
             item: {},
@@ -24,10 +24,14 @@ class SingleItem extends React.Component {
             quantity: event.target.value
         })
     }
-    // addToCart(){
-    //     fetch('/api/patches/')
-    // }
-
+    addToCart(){
+        fetch('/api/line_items?patch_id=' + this.state.id , {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+    })
+}
     render(){
         var priceUpdate = this.state.item.price / 100;
         var maxQty = this.state.item.available
@@ -83,7 +87,7 @@ class SingleItem extends React.Component {
                                     </div>
                                 </div>
                                 <div className="row text-center">
-                                    <div className="col-sm-6"><button className="btn btn-success singleItem_desc_btn" /*onClick={this.addToCart}*/>Add To Cart</button></div>
+                                    <div className="col-sm-6"><button className="btn btn-success singleItem_desc_btn" onClick={this.addToCart}>Add To Cart</button></div>
                                     <div className="col-sm-6"><Link to="/"><button className=" btn btn-primary singleItem_desc_btn">Back To Patches</button></Link></div>
                                 </div>
                             </div>
