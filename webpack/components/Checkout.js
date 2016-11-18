@@ -7,32 +7,34 @@ class Checkout extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      patches: [],
+      cart: {
+        line_items: []
+      },
     }
   }
   componentDidMount(){
-    fetch('/view_cart?token=avmZxtsvyXXdZUEpqQPQFd9L')
+    fetch('/view_cart?token=' + sessionStorage.getItem('cart_token'))
     .then(response => response.json())
-    .then(response => this.setState({patches: response}))
+    .then(response => this.setState({cart: response}))
     // .then(response => {console.log(response)})
   }
   render(){
-    var patches = this.state.patches.map((patch, i) => {
+    var patches = this.state.cart.line_items.map((lineItem, i) => {
       return         <div className="row" key={i}>
                       <div className="col-sm-4 thumbnail">
-                        <img src={patch.patch.image} />
+                        <img src={lineItem.patch.image} />
                       </div>
                       <div className="col-sm-8 ">
                         <div className="row">
                           <div className="col-sm-12">
-                            <h3>{patch.patch.title}</h3>
+                            <h3>{lineItem.patch.title}</h3>
                           </div>
                           <div className="col-sm-12 text-muted">
-                            <p>{patch.patch.description}</p>
+                            <p>{lineItem.patch.description}</p>
                           </div>
 
                           <div className="col-sm-12">
-                            <h3>${patch.patch.price / 100}</h3>
+                            <h3>${lineItem.patch.price / 100}</h3>
                           </div>
                           <div className="col-sm-12">
                             <h5>Quantity</h5>
