@@ -7,4 +7,5 @@ class LineItem < ApplicationRecord
     patch.price * quantity
   end
 
+
 end
