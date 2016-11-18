@@ -8,12 +8,14 @@ class SingleItem extends React.Component {
         this.addToCart = this.addToCart.bind(this)
         this.state = {
             id: window.location.href.split('/')[4],
-            item: {},
+            item: {
+                price: 0
+            },
             quantity: 1,
             maxQty: '',
         };
     }
-    componentDidMount(){
+    componentWillMount(){
         fetch('/api/patches/' + this.state.id)
         .then(response => response.json())
         // .then(response => console.log(response))
@@ -33,26 +35,22 @@ class SingleItem extends React.Component {
     })
 }
     render(){
-        var priceUpdate = this.state.item.price / 100;
+        var priceUpdate = this.state.item.price
+        priceUpdate = priceUpdate / 100
         var maxQty = this.state.item.available
         // console.log(maxQty)
         // console.log(this.state.quantity)
         // console.log(this.state.item.available)
         // console.log(document.getElementById('quantity').value)
+
         return (
             <div>
                 <Nav />
             <div className="container-fluid">
-                <div className="row">
-                    <main className="singleItem-body">
-                        <section className="singleItem-disp">
-                            <div className="col-sm-6">
-                                <div className="row">
-                                    <div className="col-sm-12">
+                <div className="row singleItem-body">
+                            <div className="col-sm-6 singleItem-disp">
                                         <label htmlFor="image description">Patch</label>
                                         <img src={this.state.item.image} alt="random image to hold place" className="thumbnail singleItem_display"/>
-                                    </div>
-                                </div>
                                 <div className="row singleItem_avail_section">
                                     <div className="col-sm-12">
                                         <div className="form-group">
@@ -67,9 +65,7 @@ class SingleItem extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                        </section>
-                        <section className="singleItem-desc">
-                            <div className="col-sm-6">
+                            <div className="col-sm-6 singleItem-desc">
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <img src="/images/iron-glory-assets/iron-glory-logo.png" alt="image of iron glory"/>
@@ -83,7 +79,7 @@ class SingleItem extends React.Component {
                                         <h3 tabIndex="0">Patch Description: </h3>
                                         <p>{this.state.item.description}</p>
                                         <label htmlFor="select quantity">Select Qty.</label>
-                                        <input className="form-control" type="number" name="quantity" id="quantity" step="1" min="1" max="15" pattern="[0-9]*" inputMode="numeric" value={this.state.quantity} onChange={this.handleQuantityChange}/>
+                                        <input className="form-control" type="number" name="quantity" id="quantity" step="1" min="1" max={maxQty} pattern="[0-9]*" inputMode="numeric" value={this.state.quantity} onChange={this.handleQuantityChange}/>
                                     </div>
                                 </div>
                                 <div className="row text-center">
@@ -91,8 +87,6 @@ class SingleItem extends React.Component {
                                     <div className="col-sm-6"><Link to="/"><button className=" btn btn-primary singleItem_desc_btn">Back To Patches</button></Link></div>
                                 </div>
                             </div>
-                        </section>
-                    </main>
                 </div>
             </div>
         </div>
