@@ -7,32 +7,32 @@ class Checkout extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      patches: []
+      patches: [],
     }
   }
   componentDidMount(){
-    fetch('/api/patches')
+    fetch('/view_cart?token=avmZxtsvyXXdZUEpqQPQFd9L')
     .then(response => response.json())
     .then(response => this.setState({patches: response}))
+    // .then(response => {console.log(response)})
   }
-
   render(){
     var patches = this.state.patches.map((patch, i) => {
       return         <div className="row" key={i}>
                       <div className="col-sm-4 thumbnail">
-                        <img src={patch.image} />
+                        <img src={patch.patch.image} />
                       </div>
                       <div className="col-sm-8 ">
                         <div className="row">
                           <div className="col-sm-12">
-                            <h3>{patch.title}</h3>
+                            <h3>{patch.patch.title}</h3>
                           </div>
                           <div className="col-sm-12 text-muted">
-                            <p>{patch.description}</p>
+                            <p>{patch.patch.description}</p>
                           </div>
 
                           <div className="col-sm-12">
-                            <h3>${patch.price / 100}</h3>
+                            <h3>${patch.patch.price / 100}</h3>
                           </div>
                           <div className="col-sm-12">
                             <h5>Quantity</h5>
@@ -77,9 +77,6 @@ class Checkout extends React.Component {
             <div className="row well well-sm">
               <div className="col-sm-6 ">
                 <h3>PRODUCTS</h3>
-              </div>
-              <div className="col-sm-6 ">
-                <a href="url"><h3>Continue Shopping</h3></a>
               </div>
             </div>
             <div className="row">

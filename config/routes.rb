@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/addtocart' => 'line_items#create'
   patch '/order_info' => 'carts#update'
   get '/view_cart' => 'carts#show'
+  
 
   scope '/api' do
       get '/filter' => 'catagories#filter'
