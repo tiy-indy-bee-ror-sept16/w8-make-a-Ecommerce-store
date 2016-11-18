@@ -104,6 +104,7 @@ class Payment extends React.Component {
     //         }
     //     })
     // }
+
     render(){
         return (
             <form method="POST" action="/charges">

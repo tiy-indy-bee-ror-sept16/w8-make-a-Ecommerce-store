@@ -21,6 +21,6 @@ info.each do |row|
  year: row[:year],
  description: row[:description],
  category: Category.find_or_create_by(name: row[:category]),
- image: File.open(Rails.root + "app/assets/images/iron-glory-assets/iron-glory-products/#{row[:sku]}.png", "rb")
+ image: File.open(Rails.root + "app/assets/images/iron-glory-assets/iron-glory-products/#{row[:sku].downcase}.png", "rb")
 )
 end
