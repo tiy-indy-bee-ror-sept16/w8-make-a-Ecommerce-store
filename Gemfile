@@ -27,6 +27,7 @@ gem 'stripe'
 gem 'rollbar'
 gem 'oj', '~> 2.12.14'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'rails_admin', '~> 1.0'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5'

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'patches#static'
   get '/home' => 'patches#index'
   post '/addtocart' => 'line_items#create'
