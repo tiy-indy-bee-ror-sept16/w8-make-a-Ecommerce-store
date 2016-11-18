@@ -25,4 +25,8 @@ class Cart < ApplicationRecord
   end
 
 
+
+    def thank_you_email
+      RegistrationMailer.cart(self).deliver
+    end
 end
