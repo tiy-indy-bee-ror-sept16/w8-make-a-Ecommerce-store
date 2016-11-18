@@ -5,7 +5,16 @@ Rails.application.routes.draw do
   post '/addtocart' => 'line_items#create'
   patch '/order_info' => 'carts#update'
   get '/view_cart' => 'carts#show'
-  
+  get '/checkout/' => 'patches#static'
+  get '/singleitem/:id' => 'patches#static'
+  get '/thanks/' => 'patches#static'
+  get '/payment/' => 'patches#static'
+  get '/legal/' => 'patches#static'
+  get '/shipping/' => 'patches#static'
+  get '/contact/' => 'patches#static'
+  get '/about/' => 'patches#static'
+
+
   scope '/api' do
       get '/filter' => 'catagories#filter'
     resources :carts
