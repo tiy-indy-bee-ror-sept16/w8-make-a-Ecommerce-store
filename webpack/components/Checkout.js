@@ -99,7 +99,7 @@ class Checkout extends React.Component {
                 <h4>Subtotal</h4>
               </div>
               <div className="col-sm-6 text-right">
-                <h4>$159.00</h4>
+                <h4>${this.state.cart.subtotal}</h4>
               </div>
             </div>
             <div className="row">
@@ -107,7 +107,7 @@ class Checkout extends React.Component {
                 <h4> Tax</h4>
               </div>
               <div className="col-sm-6 text-right">
-                <h4>$3.00</h4>
+                <h4>${this.state.cart.taxes}</h4>
               </div>
             </div>
             <div className="row">
@@ -115,7 +115,7 @@ class Checkout extends React.Component {
                 <h4>Shipping</h4>
               </div>
               <div className="col-sm-6 text-right">
-                <h4>$10.00</h4>
+                <h4>${this.state.cart.shipping}</h4>
               </div>
             </div>
             <div className="row">
@@ -123,7 +123,7 @@ class Checkout extends React.Component {
                 <h4>Grand Total</h4>
               </div>
               <div className="col-sm-6 text-right">
-                <h4>$172.00</h4>
+                <h4>${this.state.cart.total}</h4>
               </div>
             </div>
             <div className="row">
