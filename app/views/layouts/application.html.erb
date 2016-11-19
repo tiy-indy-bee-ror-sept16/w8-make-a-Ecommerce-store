@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag *webpack_asset_paths('application', extension: 'js') %>
+    
   <%= stylesheet_link_tag *webpack_asset_paths('application', extension: 'css') %>
   <% if Rails.env == :development %>
     <script src="http://localhost:3808/webpack-dev-server.js"></script>
