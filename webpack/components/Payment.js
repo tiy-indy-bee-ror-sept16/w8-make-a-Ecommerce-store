@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 class Payment extends React.Component {
     constructor(props){
         super(props)
-        this.submitOrder = this.submitOrder.bind(this)
+        // this.submitOrder = this.submitOrder.bind(this)
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
         this.handleLastNameChange = this.handleLastNameChange.bind(this)
         this.handlePhoneChange = this.handlePhoneChange.bind(this)
@@ -26,7 +26,15 @@ class Payment extends React.Component {
             zip_code_ship: '',
             country_ship: 'US',
             useSameAddress: 'yes',
+            cart: {
+                total: 0
+            }
         }
+    }
+    componentWillMount() {
+        fetch('/view_cart?token=' + sessionStorage.getItem('cart_token'))
+        .then(response => response.json())
+        .then(response => this.setState({cart: response}))
     }
     handle(event) {
         var updatedState = {}
@@ -83,29 +91,31 @@ class Payment extends React.Component {
             useSameAddress: 'no'
         })
     }
-    submitOrder(e) {
-        e.preventDefault()
-        console.log('made it here')
-        var token = sesssionStorage.getItem('cart_token')
-        fetch('/api/charges', {
-            body: JSON.stringify({
-                token: token,
-            }),
-            method: 'POST',
-            header: {
-                'Content-Type': 'application/json'
-            }
-        })
-    }
+    // submitOrder(e) {
+    //     e.preventDefault()
+    //     console.log('made it here')
+    //     fetch('/api/charges', {
+    //         body: {
+    //             first_name: this.state.first_name,
+    //         },
+    //         method: 'POST',
+    //         header: {
+    //             'Content-Type': 'application/json'
+    //         }
+    //     })
+    // }
+
     render(){
         return (
-            <form onSubmit={this.submitOrder}>
+            <form method="POST" action="/charges">
                 <div className="container">
                     <div className="panel panel-default text-center">
                         <div className="panel-heading">
                             <h2>CHECKOUT PAGE</h2>
                         </div>
                     </div>
+
+                    <div id="card_errors"></div>
 
                     <div className="form-group">
                         <div className="panel panel-info text-center">
@@ -337,7 +347,14 @@ class Payment extends React.Component {
                     </div>
                     <div className="row">
                         <div className="col-sm-6 col-sm-push-6 text-right">
-                            <button className="btn btn-success btn-md">Order &nbsp;</button>
+                            <input type="hidden" name="id" value="1" />
+
+                            <script src="https://checkout.stripe.com/checkout.js" className="stripe-button"
+                                    data-key="pk_test_r2IrvWINxNiqNPYTEkd8VAm3"
+                                    data-description="Enter Payment Information"
+                                    data-amount={this.state.cart.total}
+                                    data-locale="auto"></script>
+                            {/* <button className="btn btn-success btn-md">Order &nbsp;</button> */}
                         </div>
                         <div className="col-sm-6 col-sm-pull-6">
                             <Link to="/"><button type="button" className="btn btn-info btn-md" onClick={history.back}>Cancel Order</button></Link>
