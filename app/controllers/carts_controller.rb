@@ -11,12 +11,14 @@ class CartsController < ApplicationController
     if @cart.save
       if @cart.complete?
         thank_you_email
-      render json: @cart
-    else
-      render json: @cart.errors
+        render json: @cart
+      else
+        render json: @cart.errors
+      end
     end
+
   end
-  
+
 
   private
 

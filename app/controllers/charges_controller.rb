@@ -6,6 +6,7 @@ class ChargesController < ApplicationController
     # Amount in cents
 
     #keep code below until cart is ready
+
     @cart = Cart.find(params[:token])
     @amount = @cart.cart_subtotal
 
@@ -25,8 +26,8 @@ class ChargesController < ApplicationController
       :description => 'Iron Glory customer',
       :currency    => 'usd'
     )
-
-    render json: ["Thank you for shopping with us!"]
+    redirect_to thanks_path
+    # render json: ["Thank you for shopping with us!"]
 
   rescue Stripe::CardError => e
     render json: [e.message], status: :unprocessable_entity
