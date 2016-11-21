@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/addtocart' => 'line_items#create'
   patch '/order_info' => 'carts#update'
   get '/view_cart' => 'carts#show'
-  post '/checkout/' => 'patches#static'
+  get '/checkout/' => 'patches#static'
   get '/singleitem/:id' => 'patches#static'
   get '/thanks/' => 'patches#static'
   get '/payment/' => 'patches#static'

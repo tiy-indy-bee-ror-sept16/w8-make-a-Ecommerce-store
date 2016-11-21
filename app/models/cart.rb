@@ -4,6 +4,7 @@ class Cart < ApplicationRecord
   has_many :patches, through: :line_items
   has_secure_token :token
 
+
   def subtotal
     line_items.reduce(0){|sum , line_item| sum += line_item.cost}
   end
