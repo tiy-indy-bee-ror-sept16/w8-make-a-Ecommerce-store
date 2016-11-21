@@ -5,18 +5,18 @@ class LineItemsController < ApplicationController
       @line_item = LineItem.new(
       patch_id: params[:patch_id],
       quantity: params[:quantity],
-      cart: Cart.where(token: params[:token]).first)
+      cart: Cart.where(token: params[:token]).first_or_create)
     else
       @line_item = LineItem.new(
       patch_id: params[:patch_id],
       quantity: params[:quantity],
-      cart: Cart.new)
+      cart: Cart.create)
     end
 
     if @line_item.save
       render json: @line_item.cart, include: ['line_items.patch']
     else
-      render json: @line_item.errors.full_messages, status: :unprocessable_entity
+      render json: {token: @line_item.cart.token, errors: @line_item.errors.full_messages}, status: :unprocessable_entity
     end
   end
 

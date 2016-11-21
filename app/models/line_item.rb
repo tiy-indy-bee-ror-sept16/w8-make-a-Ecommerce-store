@@ -5,7 +5,7 @@ class LineItem < ApplicationRecord
 
   validates :cart, :patch, presence: true
 
-  # validates :patch_id, uniqueness: { scope: :cart }
+  validates :patch_id, uniqueness: { scope: :cart }
 
   def cost
     patch.price * quantity
