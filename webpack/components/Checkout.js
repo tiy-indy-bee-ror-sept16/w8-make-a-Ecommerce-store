@@ -42,7 +42,7 @@ class Checkout extends React.Component {
                           </div>
 
                           <div className="col-sm-12">
-                            <h3>${lineItem.patch.price / 100}</h3>
+                            <h3>${(lineItem.patch.price / 100).toFixed(2)}</h3>
                           </div>
                           <div className="col-sm-12">
                             <h5>Quantity</h5>
@@ -96,7 +96,7 @@ class Checkout extends React.Component {
                 <h4>Subtotal</h4>
               </div>
               <div className="col-sm-6 text-right">
-                <h4>${this.state.cart.subtotal}</h4>
+                <h4>${(this.state.cart.subtotal / 100).toFixed(2)}</h4>
               </div>
             </div>
             <div className="row">
@@ -104,7 +104,7 @@ class Checkout extends React.Component {
                 <h4> Tax</h4>
               </div>
               <div className="col-sm-6 text-right">
-                <h4>${this.state.cart.taxes}</h4>
+                <h4>${(this.state.cart.taxes / 100).toFixed(2)}</h4>
               </div>
             </div>
             <div className="row">
@@ -112,7 +112,7 @@ class Checkout extends React.Component {
                 <h4>Shipping</h4>
               </div>
               <div className="col-sm-6 text-right">
-                <h4>${this.state.cart.shipping}</h4>
+                <h4>${(this.state.cart.shipping/ 100).toFixed(2)}</h4>
               </div>
             </div>
             <div className="row">
@@ -120,7 +120,7 @@ class Checkout extends React.Component {
                 <h4>Grand Total</h4>
               </div>
               <div className="col-sm-6 text-right">
-                <h4>${this.state.cart.total}</h4>
+                <h4>${(this.state.cart.total / 100).toFixed(2)}</h4>
               </div>
             </div>
             <div className="row">
